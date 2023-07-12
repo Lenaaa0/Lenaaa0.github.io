@@ -25,18 +25,23 @@
     
     
     <summary type="html">&lt;hr&gt;
-&lt;h3 id=&quot;借用llq的博客&quot;&gt;&lt;a href=&quot;#借用llq的博客&quot; class=&quot;headerlink&quot; title=&quot;借用llq的博客&quot;&gt;&lt;/a&gt;借用llq的博客&lt;/h3&gt;&lt;p&gt;教程&lt;a href=&quot;https://xmnsatay.github.io/2023/02/26/%E8%AE%B0%E5%BD%95%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/&quot;&gt;https://xmnsatay.github.io/2023/02/26/%E8%AE%B0%E5%BD%95%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;借用llq的博客&quot;&gt;&lt;a href=&quot;#借用llq的博客&quot; class=&quot;headerlink&quot; title=&quot;借用llq的博客&quot;&gt;&lt;/a&gt;借用llq的博客&lt;/h3&gt;&lt;p&gt;教程&lt;a class=&quot;link&quot;   href=&quot;https://xmnsatay.github.io/2023/02/26/%E8%AE%B0%E5%BD%95%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/&quot; &gt;https://xmnsatay.github.io/2023/02/26/%E8%AE%B0%E5%BD%95%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/ &lt;i class=&quot;fa-regular fa-arrow-up-right-from-square fa-sm&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;踩坑&quot;&gt;&lt;a href=&quot;#踩坑&quot; class=&quot;headerlink&quot; title=&quot;踩坑&quot;&gt;&lt;/a&gt;踩坑&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;hexo-d出错&lt;ul&gt;
 &lt;li&gt;解决：llq说没下载hexo-deployer-git&lt;ul&gt;
-&lt;li&gt;npm install hexo-deployer-git –save&lt;img src=&quot;/image.png&quot; alt=&quot;Alt text&quot;&gt;&lt;/li&gt;
+&lt;li&gt;npm install hexo-deployer-git –save&lt;img  
+                     lazyload
+                     src=&quot;/images/loading.svg&quot;
+                     data-src=&quot;/image.png&quot;
+                      alt=&quot;Alt text&quot;
+                &gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;图片只能在本地查看，还不会添加图床&lt;ul&gt;
 &lt;li&gt;解决：还未解决 😀&lt;/li&gt;
-&lt;li&gt;放个网址&lt;a href=&quot;https://cursorhu.github.io/2022/02/28/%E6%90%AD%E5%BB%BA%E9%AB%98%E5%8F%AF%E7%A7%BB%E6%A4%8D%E7%9A%84Markdown%E5%86%99%E4%BD%9C%E5%92%8C%E5%8D%9A%E5%AE%A2%E7%8E%AF%E5%A2%83%EF%BC%9AObsidian+PicGo+Hexo+Github/&quot;&gt;搭建高可移植的Markdown写作和博客环境：Obsidian+PicGo+Hexo+Github | ThinkNotes (cursorhu.github.io)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;放个网址&lt;a class=&quot;link&quot;   href=&quot;https://cursorhu.github.io/2022/02/28/%E6%90%AD%E5%BB%BA%E9%AB%98%E5%8F%AF%E7%A7%BB%E6%A4%8D%E7%9A%84Markdown%E5%86%99%E4%BD%9C%E5%92%8C%E5%8D%9A%E5%AE%A2%E7%8E%AF%E5%A2%83%EF%BC%9AObsidian+PicGo+Hexo+Github/&quot; &gt;搭建高可移植的Markdown写作和博客环境：Obsidian+PicGo+Hexo+Github | ThinkNotes (cursorhu.github.io) &lt;i class=&quot;fa-regular fa-arrow-up-right-from-square fa-sm&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;存放这个博客的仓库名字一开始跟github用户名不同&lt;ul&gt;
@@ -49,7 +54,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;vscode写markdown不丝滑，准备换成obsidian&lt;ul&gt;
-&lt;li&gt;放个教程&lt;a href=&quot;https://blog.esunr.xyz/2022/07/e9b42b453d9f.html#3-2-%E4%BD%BF%E7%94%A8-Obsidian-%E6%A8%A1%E6%9D%BF%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA%E6%96%87%E7%AB%A0&quot;&gt;Hexo + Obsidian + Git 完美的博客部署与编辑方案 | EsunR-Blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;放个教程&lt;a class=&quot;link&quot;   href=&quot;https://blog.esunr.xyz/2022/07/e9b42b453d9f.html#3-2-%E4%BD%BF%E7%94%A8-Obsidian-%E6%A8%A1%E6%9D%BF%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA%E6%96%87%E7%AB%A0&quot; &gt;Hexo + Obsidian + Git 完美的博客部署与编辑方案 | EsunR-Blog &lt;i class=&quot;fa-regular fa-arrow-up-right-from-square fa-sm&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;问题：利用obsidian-git commit的东西不知道为什么不能成功，但在obsidian里是显示成功了的 😭</summary>
     
     
@@ -62,9 +67,32 @@
   </entry>
   
   <entry>
+    <title>Hello World</title>
+    <link href="http://example.com/2023/07/075388a72a39.html"/>
+    <id>http://example.com/2023/07/075388a72a39.html</id>
+    <published>2023-07-11T06:37:32.565Z</published>
+    <updated>2023-07-11T06:37:40.712Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a class=&quot;link&quot;   href=&quot;https://hexo.io/&quot; &gt;Hexo &lt;i class=&quot;fa-regular fa-arrow-up-right-from-square fa-sm&quot;&gt;&lt;/i&gt;&lt;/a&gt;! This is</summary>
+        
+      
+    
+    
+    
+    <category term="嘿嘿" scheme="http://example.com/categories/%E5%98%BF%E5%98%BF/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>test</title>
-    <link href="http://example.com/2023/07/86b13b84b7a5.html"/>
-    <id>http://example.com/2023/07/86b13b84b7a5.html</id>
+    <link href="http://example.com/2023/07/fef1c6f73b5a.html"/>
+    <id>http://example.com/2023/07/fef1c6f73b5a.html</id>
     <published>2023-07-11T02:28:48.000Z</published>
     <updated>2023-07-11T03:07:26.896Z</updated>
     
@@ -72,29 +100,6 @@
     
     
     <category term="测试" scheme="http://example.com/categories/%E6%B5%8B%E8%AF%95/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://example.com/2023/07/bdb89388c0d6.html"/>
-    <id>http://example.com/2023/07/bdb89388c0d6.html</id>
-    <published>2023-07-10T04:19:39.404Z</published>
-    <updated>2023-07-11T03:07:50.232Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="嘿嘿" scheme="http://example.com/categories/%E5%98%BF%E5%98%BF/"/>
     
     
   </entry>
