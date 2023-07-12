@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-07-11T06:38:08.438Z</updated>
+  <updated>2023-07-12T02:37:42.238Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Lena-first-blog</title>
-    <link href="http://example.com/2023/07/a41193217b1e.html"/>
-    <id>http://example.com/2023/07/a41193217b1e.html</id>
+    <link href="http://example.com/2023/07/50b1096d86a3.html"/>
+    <id>http://example.com/2023/07/50b1096d86a3.html</id>
     <published>2023-07-11T06:37:44.000Z</published>
-    <updated>2023-07-11T06:38:08.438Z</updated>
+    <updated>2023-07-12T02:37:42.238Z</updated>
     
     
     <summary type="html">&lt;hr&gt;
@@ -55,6 +55,8 @@
     
     
     <category term="嘿嘿" scheme="http://example.com/categories/%E5%98%BF%E5%98%BF/"/>
+    
+    <category term="Lena-first-blog" scheme="http://example.com/categories/%E5%98%BF%E5%98%BF/Lena-first-blog/"/>
     
     
   </entry>
