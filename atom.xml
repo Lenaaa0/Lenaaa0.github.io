@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-07-12T07:51:30.004Z</updated>
+  <updated>2023-07-12T07:58:37.568Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Lena-first-blog</title>
-    <link href="http://example.com/2023/07/50b1096d86a3.html"/>
-    <id>http://example.com/2023/07/50b1096d86a3.html</id>
-    <published>2023-07-11T06:37:44.000Z</published>
-    <updated>2023-07-12T07:51:30.004Z</updated>
+    <title>build my blog</title>
+    <link href="http://example.com/2023/07/122701f1f353.html"/>
+    <id>http://example.com/2023/07/122701f1f353.html</id>
+    <published>2023-07-11T16:00:00.000Z</published>
+    <updated>2023-07-12T07:58:37.568Z</updated>
     
     
       
@@ -36,12 +36,10 @@
     
     <category term="实操记录" scheme="http://example.com/categories/%E5%AE%9E%E6%93%8D%E8%AE%B0%E5%BD%95/"/>
     
-    <category term="Lena-first-blog" scheme="http://example.com/categories/%E5%AE%9E%E6%93%8D%E8%AE%B0%E5%BD%95/Lena-first-blog/"/>
-    
     
     <category term="踩坑" scheme="http://example.com/tags/%E8%B8%A9%E5%9D%91/"/>
     
-    <category term="建博客" scheme="http://example.com/tags/%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    <category term="搭博客" scheme="http://example.com/tags/%E6%90%AD%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   

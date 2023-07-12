@@ -22,13 +22,13 @@
       </categories>
   </entry>
   <entry>
-    <title>Lena-first-blog</title>
-    <url>/2023/07/50b1096d86a3.html</url>
+    <title>build my blog</title>
+    <url>/2023/07/122701f1f353.html</url>
     <content><![CDATA[<h3 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h3><p>教程，借用llq的博客<a class="link" href="https://xmnsatay.github.io/2023/02/26/%E8%AE%B0%E5%BD%95%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">https://xmnsatay.github.io/2023/02/26/%E8%AE%B0%E5%BD%95%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <h3 id="踩坑"><a href="#踩坑" class="headerlink" title="踩坑"></a>踩坑</h3><ul>
 <li>hexo-d出错<ul>
 <li>解决：llq说没下载hexo-deployer-git<ul>
-<li>npm install hexo-deployer-git –save<img lazyload="" src="/images/loading.svg" data-src="/image.png" alt="Alt text"></li>
+<li>npm install hexo-deployer-git –save</li>
 </ul>
 </li>
 </ul>
@@ -63,11 +63,10 @@
 ]]></content>
       <categories>
         <category>实操记录</category>
-        <category>Lena-first-blog</category>
       </categories>
       <tags>
         <tag>踩坑</tag>
-        <tag>建博客</tag>
+        <tag>搭博客</tag>
       </tags>
   </entry>
 </search>
