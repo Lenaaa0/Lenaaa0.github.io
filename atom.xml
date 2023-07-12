@@ -49,7 +49,7 @@
       
         
         
-    <summary type="html">&lt;p&gt;Welcome to &lt;a class=&quot;link&quot; href=&quot;https://hexo.io/&quot;&gt;Hexo &lt;i class=&quot;fa-regular fa-arrow-up-right-from-square fa-sm&quot;&gt;&lt;/i&gt;&lt;/a&gt;! This is your</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
         
       
     
