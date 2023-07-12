@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-07-12T08:19:50.023Z</updated>
+  <updated>2023-07-12T08:44:10.257Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2023/07/122701f1f353.html"/>
     <id>http://example.com/2023/07/122701f1f353.html</id>
     <published>2023-07-11T16:00:00.000Z</published>
-    <updated>2023-07-12T08:19:50.023Z</updated>
+    <updated>2023-07-12T08:44:10.257Z</updated>
     
     
     <summary type="html">试一下摘要</summary>
