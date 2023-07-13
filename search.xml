@@ -22,18 +22,6 @@
       </categories>
   </entry>
   <entry>
-    <title>7.13杂谈</title>
-    <url>/2023/07/4222c5060390.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>前天昨天简单地建起了博客，虽然碰到了很多奇怪的问题😢<br>而且虽然利用ob加图床可以很好地编辑了（排除了hexo-renderer-marked方案，因为我不用hexo new指令，直接在ob里创建文件）但是在编辑地时候，不能直接预览图片，抓耳挠腮.jpg，希望后续可以解决<br>昨天还添加了我的网易云歌单，话说这样岂不是可以不付费听付费地歌了（因为用的是我的id）好像有点危险</p>
-]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
-      <tags>
-        <tag>日记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>计算机网络自学（更新中）</title>
     <url>/2023/07/6328c60e2bef.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="导论"><a href="#导论" class="headerlink" title="导论"></a>导论</h1><h2 id="TCP与UDP"><a href="#TCP与UDP" class="headerlink" title="TCP与UDP"></a>TCP与UDP</h2><ul>
@@ -377,6 +365,18 @@
       <tags>
         <tag>学习</tag>
         <tag>计网</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>7.13杂谈</title>
+    <url>/2023/07/4222c5060390.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>前天昨天简单地建起了博客，虽然碰到了很多奇怪的问题😢<br>而且虽然利用ob加图床可以很好地编辑了（排除了hexo-renderer-marked方案，因为我不用hexo new指令，直接在ob里创建文件）但是在编辑地时候，不能直接预览图片，抓耳挠腮.jpg，希望后续可以解决<br>昨天还添加了我的网易云歌单，话说这样岂不是可以不付费听付费地歌了（因为用的是我的id）好像有点危险</p>
+]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>日记</tag>
       </tags>
   </entry>
   <entry>
