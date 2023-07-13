@@ -22,56 +22,6 @@
       </categories>
   </entry>
   <entry>
-    <title>build my blog</title>
-    <url>/2023/07/122701f1f353.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h3><p>教程，借用llq的博客<a class="link" href="https://xmnsatay.github.io/2023/02/26/%E8%AE%B0%E5%BD%95%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">https://xmnsatay.github.io/2023/02/26/%E8%AE%B0%E5%BD%95%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h3 id="踩坑"><a href="#踩坑" class="headerlink" title="踩坑"></a>踩坑</h3><ul>
-<li>hexo-d出错<ul>
-<li>解决：llq说没下载hexo-deployer-git<ul>
-<li>npm install hexo-deployer-git –save</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>图片只能在本地查看，还不会添加图床<ul>
-<li>解决：用了聚合图床，后续可能会考虑使用阿里云oss</li>
-<li>放个网址<a class="link" href="https://cursorhu.github.io/2022/02/28/%E6%90%AD%E5%BB%BA%E9%AB%98%E5%8F%AF%E7%A7%BB%E6%A4%8D%E7%9A%84Markdown%E5%86%99%E4%BD%9C%E5%92%8C%E5%8D%9A%E5%AE%A2%E7%8E%AF%E5%A2%83%EF%BC%9AObsidian+PicGo+Hexo+Github/">搭建高可移植的Markdown写作和博客环境：Obsidian+PicGo+Hexo+Github | ThinkNotes (cursorhu.github.io) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
-<li><a class="link" href="https://zhuanlan.zhihu.com/p/104152479">阿里云OSS PicGo 配置图床教程 超详细 - 知乎 (zhihu.com) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
-</ul>
-</li>
-<li>存放这个博客的仓库名字一开始跟github用户名不同<ul>
-<li>解决：仓库名字改成了用户名</li>
-<li>疑问：仓库名字设置为用户名一定可以保证后续博客域名的唯一性吗？域名不区分大小写，然后后面一搜发现github的用户名也不区分大小写哈哈哈🤣</li>
-</ul>
-</li>
-<li>成功通过域名访问到博客后，显示的界面只有我的仓库名称<ul>
-<li>解决：hexo clean后再重新操作，不知道为啥？</li>
-</ul>
-</li>
-<li>vscode写markdown不丝滑，准备换成obsidian<ul>
-<li>放个教程<a class="link" href="https://blog.esunr.xyz/2022/07/e9b42b453d9f.html#3-2-%E4%BD%BF%E7%94%A8-Obsidian-%E6%A8%A1%E6%9D%BF%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA%E6%96%87%E7%AB%A0">Hexo + Obsidian + Git 完美的博客部署与编辑方案 | EsunR-Blog <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
-<li>存在的问题：按照上述方案优化，在ob里创建文件夹后在该文件夹下创建文件，可自动分类补全categories，但是后续想要修改分类的时候会自动变回原来的categories，即修改不了，猜想可能是因为自动分类插件，目前还未解决</li>
-</ul>
-</li>
-<li>配置yml文件经常出错<ul>
-<li>多注意缩进</li>
-</ul>
-</li>
-</ul>
-<h3 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h3><p>放个redefine的官方文档 <a class="link" href="https://redefine-docs.ohevan.com/">Theme Redefine Docs - Redefine Docs (ohevan.com) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h3 id="鼓励自己"><a href="#鼓励自己" class="headerlink" title="鼓励自己"></a>鼓励自己</h3><p>搭博客有点麻烦，希望我能好好记录下去，或者说在这里储存储存我的笔记哈哈哈哈😀</p>
-<pre><code>&lt;!--more--&gt;
-</code></pre>
-]]></content>
-      <categories>
-        <category>实操记录</category>
-      </categories>
-      <tags>
-        <tag>搭博客</tag>
-        <tag>踩坑</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>7.13杂谈</title>
     <url>/2023/07/4222c5060390.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>前天昨天简单地建起了博客，虽然碰到了很多奇怪的问题😢<br>而且虽然利用ob加图床可以很好地编辑了（排除了hexo-renderer-marked方案，因为我不用hexo new指令，直接在ob里创建文件）但是在编辑地时候，不能直接预览图片，抓耳挠腮.jpg，希望后续可以解决<br>昨天还添加了我的网易云歌单，话说这样岂不是可以不付费听付费地歌了（因为用的是我的id）好像有点危险</p>
@@ -86,19 +36,19 @@
   <entry>
     <title>计算机网络自学（更新中）</title>
     <url>/2023/07/6328c60e2bef.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script># 导论
-## TCP与UDP
-- tcp向上传输的是可靠的，编号、校验、重传等，消耗时间、空间
-- 对可靠性要求不高但对实时性要求高-&gt;UDP数据传输协议，所以常见于多媒体应用
-- https://pic.imgdb.cn/item/64af49711ddac507cc874125.png 左TCP右UDP，TCP先连接
-- 传输层是为多个远程应用进程提供服务的 在网络层提供的端到端的服务基础上实现，将主机到主机细分到进程到进程，是网络层的细分，不可靠到可靠
-- 网络层源主机到目标主机，主机到主机，是尽力而为的（？可能会丢包等）端到端（其中有很多点到点）所以在数据链路层提供的相邻两点点到点服务基础上才能实现
-- 传统？互联网网络层：路由：路由协议（路由器交换信息，路由算法-&gt;路由表）转发： IP协议（对到来的分组进行转发）
-- SDN
-    - 数据平面
-    - 控制平面
-
-
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="导论"><a href="#导论" class="headerlink" title="导论"></a>导论</h1><h2 id="TCP与UDP"><a href="#TCP与UDP" class="headerlink" title="TCP与UDP"></a>TCP与UDP</h2><ul>
+<li>tcp向上传输的是可靠的，编号、校验、重传等，消耗时间、空间</li>
+<li>对可靠性要求不高但对实时性要求高-&gt;UDP数据传输协议，所以常见于多媒体应用</li>
+<li><a class="link" href="https://pic.imgdb.cn/item/64af49711ddac507cc874125.png">https://pic.imgdb.cn/item/64af49711ddac507cc874125.png <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 左TCP右UDP，TCP先连接</li>
+<li>传输层是为多个远程应用进程提供服务的 在网络层提供的端到端的服务基础上实现，将主机到主机细分到进程到进程，是网络层的细分，不可靠到可靠</li>
+<li>网络层源主机到目标主机，主机到主机，是尽力而为的（？可能会丢包等）端到端（其中有很多点到点）所以在数据链路层提供的相邻两点点到点服务基础上才能实现</li>
+<li>传统？互联网网络层：路由：路由协议（路由器交换信息，路由算法-&gt;路由表）转发： IP协议（对到来的分组进行转发）</li>
+<li>SDN<ul>
+<li>数据平面</li>
+<li>控制平面</li>
+</ul>
+</li>
+</ul>
 <h2 id="第一章-网络"><a href="#第一章-网络" class="headerlink" title="第一章 网络"></a>第一章 网络</h2><h2 id="什么是网络"><a href="#什么是网络" class="headerlink" title="什么是网络"></a>什么是网络</h2><ul>
 <li>节点<ul>
 <li>主机节点 画方<ul>
@@ -427,6 +377,56 @@
       <tags>
         <tag>学习</tag>
         <tag>计网</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>build my blog</title>
+    <url>/2023/07/122701f1f353.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h3><p>教程，借用llq的博客<a class="link" href="https://xmnsatay.github.io/2023/02/26/%E8%AE%B0%E5%BD%95%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">https://xmnsatay.github.io/2023/02/26/%E8%AE%B0%E5%BD%95%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="踩坑"><a href="#踩坑" class="headerlink" title="踩坑"></a>踩坑</h3><ul>
+<li>hexo-d出错<ul>
+<li>解决：llq说没下载hexo-deployer-git<ul>
+<li>npm install hexo-deployer-git –save</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>图片只能在本地查看，还不会添加图床<ul>
+<li>解决：用了聚合图床，后续可能会考虑使用阿里云oss</li>
+<li>放个网址<a class="link" href="https://cursorhu.github.io/2022/02/28/%E6%90%AD%E5%BB%BA%E9%AB%98%E5%8F%AF%E7%A7%BB%E6%A4%8D%E7%9A%84Markdown%E5%86%99%E4%BD%9C%E5%92%8C%E5%8D%9A%E5%AE%A2%E7%8E%AF%E5%A2%83%EF%BC%9AObsidian+PicGo+Hexo+Github/">搭建高可移植的Markdown写作和博客环境：Obsidian+PicGo+Hexo+Github | ThinkNotes (cursorhu.github.io) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li><a class="link" href="https://zhuanlan.zhihu.com/p/104152479">阿里云OSS PicGo 配置图床教程 超详细 - 知乎 (zhihu.com) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+</ul>
+</li>
+<li>存放这个博客的仓库名字一开始跟github用户名不同<ul>
+<li>解决：仓库名字改成了用户名</li>
+<li>疑问：仓库名字设置为用户名一定可以保证后续博客域名的唯一性吗？域名不区分大小写，然后后面一搜发现github的用户名也不区分大小写哈哈哈🤣</li>
+</ul>
+</li>
+<li>成功通过域名访问到博客后，显示的界面只有我的仓库名称<ul>
+<li>解决：hexo clean后再重新操作，不知道为啥？</li>
+</ul>
+</li>
+<li>vscode写markdown不丝滑，准备换成obsidian<ul>
+<li>放个教程<a class="link" href="https://blog.esunr.xyz/2022/07/e9b42b453d9f.html#3-2-%E4%BD%BF%E7%94%A8-Obsidian-%E6%A8%A1%E6%9D%BF%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA%E6%96%87%E7%AB%A0">Hexo + Obsidian + Git 完美的博客部署与编辑方案 | EsunR-Blog <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li>存在的问题：按照上述方案优化，在ob里创建文件夹后在该文件夹下创建文件，可自动分类补全categories，但是后续想要修改分类的时候会自动变回原来的categories，即修改不了，猜想可能是因为自动分类插件，目前还未解决</li>
+</ul>
+</li>
+<li>配置yml文件经常出错<ul>
+<li>多注意缩进</li>
+</ul>
+</li>
+</ul>
+<h3 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h3><p>放个redefine的官方文档 <a class="link" href="https://redefine-docs.ohevan.com/">Theme Redefine Docs - Redefine Docs (ohevan.com) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="鼓励自己"><a href="#鼓励自己" class="headerlink" title="鼓励自己"></a>鼓励自己</h3><p>搭博客有点麻烦，希望我能好好记录下去，或者说在这里储存储存我的笔记哈哈哈哈😀</p>
+<pre><code>&lt;!--more--&gt;
+</code></pre>
+]]></content>
+      <categories>
+        <category>实操记录</category>
+      </categories>
+      <tags>
+        <tag>搭博客</tag>
+        <tag>踩坑</tag>
       </tags>
   </entry>
 </search>
