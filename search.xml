@@ -72,22 +72,34 @@
       </tags>
   </entry>
   <entry>
+    <title>7.13杂谈</title>
+    <url>/2023/07/4222c5060390.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>前天昨天简单地建起了博客，虽然碰到了很多奇怪的问题😢<br>而且虽然利用ob加图床可以很好地编辑了（排除了hexo-renderer-marked方案，因为我不用hexo new指令，直接在ob里创建文件）但是在编辑地时候，不能直接预览图片，抓耳挠腮.jpg，希望后续可以解决<br>昨天还添加了我的网易云歌单，话说这样岂不是可以不付费听付费地歌了（因为用的是我的id）好像有点危险</p>
+]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>日记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>计算机网络自学（更新中）</title>
     <url>/2023/07/6328c60e2bef.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="导论"><a href="#导论" class="headerlink" title="导论"></a>导论</h1><h4 id="TCP与UDP"><a href="#TCP与UDP" class="headerlink" title="TCP与UDP"></a>TCP与UDP</h4><ul>
-<li>tcp向上传输的是可靠的，编号、校验、重传等，消耗时间、空间</li>
-<li>对可靠性要求不高但对实时性要求高-&gt;UDP数据传输协议，所以常见于多媒体应用</li>
-<li><a class="link" href="https://pic.imgdb.cn/item/64af49711ddac507cc874125.png">https://pic.imgdb.cn/item/64af49711ddac507cc874125.png <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 左TCP右UDP，TCP先连接</li>
-<li>传输层是为多个远程应用进程提供服务的 在网络层提供的端到端的服务基础上实现，将主机到主机细分到进程到进程，是网络层的细分，不可靠到可靠</li>
-<li>网络层源主机到目标主机，主机到主机，是尽力而为的（？可能会丢包等）端到端（其中有很多点到点）所以在数据链路层提供的相邻两点点到点服务基础上才能实现</li>
-<li>传统？互联网网络层：路由：路由协议（路由器交换信息，路由算法-&gt;路由表）转发： IP协议（对到来的分组进行转发）</li>
-<li>SDN<ul>
-<li>数据平面</li>
-<li>控制平面</li>
-</ul>
-</li>
-</ul>
-<h2 id="第一章-网络"><a href="#第一章-网络" class="headerlink" title="第一章 网络"></a>第一章 网络</h2><h4 id="1-1-什么是网络"><a href="#1-1-什么是网络" class="headerlink" title="1.1 什么是网络"></a>1.1 什么是网络</h4><ul>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script># 导论
+## TCP与UDP
+- tcp向上传输的是可靠的，编号、校验、重传等，消耗时间、空间
+- 对可靠性要求不高但对实时性要求高-&gt;UDP数据传输协议，所以常见于多媒体应用
+- https://pic.imgdb.cn/item/64af49711ddac507cc874125.png 左TCP右UDP，TCP先连接
+- 传输层是为多个远程应用进程提供服务的 在网络层提供的端到端的服务基础上实现，将主机到主机细分到进程到进程，是网络层的细分，不可靠到可靠
+- 网络层源主机到目标主机，主机到主机，是尽力而为的（？可能会丢包等）端到端（其中有很多点到点）所以在数据链路层提供的相邻两点点到点服务基础上才能实现
+- 传统？互联网网络层：路由：路由协议（路由器交换信息，路由算法-&gt;路由表）转发： IP协议（对到来的分组进行转发）
+- SDN
+    - 数据平面
+    - 控制平面
+
+
+<h2 id="第一章-网络"><a href="#第一章-网络" class="headerlink" title="第一章 网络"></a>第一章 网络</h2><h2 id="什么是网络"><a href="#什么是网络" class="headerlink" title="什么是网络"></a>什么是网络</h2><ul>
 <li>节点<ul>
 <li>主机节点 画方<ul>
 <li>host 联网的冰箱等联网设备 </li>
@@ -103,7 +115,7 @@
 </ul>
 </li>
 <li>互联网：以TCPIP为主的一簇协议工作的网络</li>
-<li>协议：对等层的实体在通信时应当遵循的规则的集合 <a class="link" href="https://pic.imgdb.cn/item/64af49da1ddac507cc8830c0.png">https://pic.imgdb.cn/item/64af49da1ddac507cc8830c0.png <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><ul>
+<li>协议：==对等层的实体==在通信时应当遵循的规则的集合 <a class="link" href="https://pic.imgdb.cn/item/64af49da1ddac507cc8830c0.png">https://pic.imgdb.cn/item/64af49da1ddac507cc8830c0.png <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><ul>
 <li>格式<ul>
 <li>语法</li>
 <li>语义</li>
@@ -129,17 +141,17 @@
 </ul>
 </li>
 </ul>
-<h4 id="1-2-网络边缘"><a href="#1-2-网络边缘" class="headerlink" title="1.2 网络边缘"></a>1.2 网络边缘</h4><p><a class="link" href="https://pic.imgdb.cn/item/64af4ace1ddac507cc8a6a2b.png">https://pic.imgdb.cn/item/64af4ace1ddac507cc8a6a2b.png <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="网络边缘"><a href="#网络边缘" class="headerlink" title="网络边缘"></a>网络边缘</h2><p><a class="link" href="https://pic.imgdb.cn/item/64af4ace1ddac507cc8a6a2b.png">https://pic.imgdb.cn/item/64af4ace1ddac507cc8a6a2b.png <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <ul>
 <li><p>运用进程间通信的模式</p>
 <ul>
-<li>CS模式 客户端服务器模式 服务器是主要的，首先运转，守在端口等待客户端的请求，客户端主动请求服务器的资源，主为服务器，从为客户端<ul>
+<li>CS模式 客户端服务器模式 ==服务器是主要的，首先运转==，守在端口等待客户端的请求，客户端主动请求服务器的资源，主为服务器，从为客户端<ul>
 <li>问题 请求多的时候达到阈值会断崖，存在可扩展性的问题？（不全）扩容满足不了用户的请求</li>
 </ul>
 </li>
 <li>对等模式（P2P）<ul>
-<li>每个节点既是客户端又是服务器，</li>
-<li>请求资源的节点越多的同时 提供资源的节点也越来越多，且通信是分布式的，可以向不同节点请求</li>
+<li>每个节点==既是客户端又是服务器==，</li>
+<li>请求资源的节点越多的同时 提供资源的节点也越来越多，且通信是==分布式==的，可以向不同节点请求</li>
 <li>文件分发系统中常用 如迅雷、电驴</li>
 </ul>
 </li>
@@ -162,7 +174,7 @@
 </li>
 </ul>
 <p><a class="link" href="https://pic.imgdb.cn/item/64af4b281ddac507cc8b4b4f.png">https://pic.imgdb.cn/item/64af4b281ddac507cc8b4b4f.png <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h4 id="1-3网络核心"><a href="#1-3网络核心" class="headerlink" title="1.3网络核心"></a>1.3网络核心</h4><ul>
+<h2 id="网络核心"><a href="#网络核心" class="headerlink" title="网络核心"></a>网络核心</h2><ul>
 <li><p>分组交换</p>
 <ul>
 <li>使用的是带宽的全部</li>
@@ -233,7 +245,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="接入网和物理媒体"><a href="#接入网和物理媒体" class="headerlink" title="接入网和物理媒体"></a>接入网和物理媒体</h4><ul>
+<h2 id="接入网和物理媒体"><a href="#接入网和物理媒体" class="headerlink" title="接入网和物理媒体"></a>接入网和物理媒体</h2><ul>
 <li>边缘端系统通过接入网接入网络核心</li>
 <li>住宅接入：modom<ul>
 <li>利用已有电话线，调制、解调 在音频的载波上加载数据</li>
@@ -248,7 +260,7 @@
 <li>线缆网络</li>
 <li><a class="link" href="https://blog.csdn.net/weixin_43098506/article/details/124280360">(86条消息) 【计算机网络】边缘路由器 三种家庭接入网(光纤到户) DSL、HFC与PON_pon dsl_脚踏实地的大梦想家的博客-CSDN博客 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><a class="link" href="https://blog.csdn.net/weixin_43098506/article/details/124280360">(86条消息) 【计算机网络】边缘路由器 三种家庭接入网(光纤到户) DSL、HFC与PON_pon dsl_脚踏实地的大梦想家的博客-CSDN博客 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
 </ul>
-<h4 id="网络结构和ISP"><a href="#网络结构和ISP" class="headerlink" title="网络结构和ISP"></a>网络结构和ISP</h4><p>把关系密集的，在一个网络当中的，成为一个ISP 的网络</p>
+<h2 id="网络结构和ISP"><a href="#网络结构和ISP" class="headerlink" title="网络结构和ISP"></a>网络结构和ISP</h2><p>把关系密集的，在一个网络当中的，成为一个ISP 的网络</p>
 <ul>
 <li>网络的结构<ul>
 <li><p>接入ISP 端系统通过接入ISP接入到互联网，如移动、联通</p>
@@ -289,7 +301,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="分组延时，丢失和吞吐量"><a href="#分组延时，丢失和吞吐量" class="headerlink" title="分组延时，丢失和吞吐量"></a>分组延时，丢失和吞吐量</h4><ul>
+<h2 id="分组延时，丢失和吞吐量"><a href="#分组延时，丢失和吞吐量" class="headerlink" title="分组延时，丢失和吞吐量"></a>分组延时，丢失和吞吐量</h2><ul>
 <li>一跳（hop）所要经历的四种分组延时<ul>
 <li>节点处理延迟，通常是微秒数量级或更少<ul>
 <li>检查分组有无出错</li>
@@ -340,7 +352,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="1-7-协议层次和服务模型"><a href="#1-7-协议层次和服务模型" class="headerlink" title="1.7 协议层次和服务模型"></a>1.7 协议层次和服务模型</h4><ul>
+<h2 id="协议层次和服务模型"><a href="#协议层次和服务模型" class="headerlink" title="协议层次和服务模型"></a>协议层次和服务模型</h2><ul>
 <li>功能模块化 相互调用</li>
 <li>分层 仅相邻层次的可调用 特殊的模块化</li>
 <li>大问题分解 便于采用新技术</li>
@@ -415,18 +427,6 @@
       <tags>
         <tag>学习</tag>
         <tag>计网</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>7.13杂谈</title>
-    <url>/2023/07/4222c5060390.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>前天昨天简单地建起了博客，虽然碰到了很多奇怪的问题😢<br>而且虽然利用ob加图床可以很好地编辑了（排除了hexo-renderer-marked方案，因为我不用hexo new指令，直接在ob里创建文件）但是在编辑地时候，不能直接预览图片，抓耳挠腮.jpg，希望后续可以解决<br>昨天还添加了我的网易云歌单，话说这样岂不是可以不付费听付费地歌了（因为用的是我的id）好像有点危险</p>
-]]></content>
-      <categories>
-        <category>杂记</category>
-      </categories>
-      <tags>
-        <tag>日记</tag>
       </tags>
   </entry>
 </search>
