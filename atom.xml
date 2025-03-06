@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Lena&#39;s Blog</title>
+  
+  <subtitle>test</subtitle>
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2023-12-02T14:22:09.000Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>Lena</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>12.2杂谈</title>
+    <link href="http://example.com/2023/12/3d52ef79bb83.html"/>
+    <id>http://example.com/2023/12/3d52ef79bb83.html</id>
+    <published>2023-12-02T14:22:09.000Z</published>
+    <updated>2023-12-02T14:22:09.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="杂记" scheme="http://example.com/categories/%E6%9D%82%E8%AE%B0/"/>
+    
+    
+    <category term="日记" scheme="http://example.com/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>7.13杂谈</title>
+    <link href="http://example.com/2023/07/f38d710a42eb.html"/>
+    <id>http://example.com/2023/07/f38d710a42eb.html</id>
+    <published>2023-07-13T01:04:39.000Z</published>
+    <updated>2023-07-13T01:12:32.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="杂记" scheme="http://example.com/categories/%E6%9D%82%E8%AE%B0/"/>
+    
+    
+    <category term="日记" scheme="http://example.com/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机网络自学（更新中）</title>
+    <link href="http://example.com/2023/07/6328c60e2bef.html"/>
+    <id>http://example.com/2023/07/6328c60e2bef.html</id>
+    <published>2023-07-13T00:47:26.000Z</published>
+    <updated>2023-07-13T02:29:23.519Z</updated>
+    
+    
+    <summary type="html">b站上中科大的计算机网络笔记</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="学习" scheme="http://example.com/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="计网" scheme="http://example.com/tags/%E8%AE%A1%E7%BD%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>build my blog</title>
+    <link href="http://example.com/2023/07/122701f1f353.html"/>
+    <id>http://example.com/2023/07/122701f1f353.html</id>
+    <published>2023-07-11T16:00:00.000Z</published>
+    <updated>2023-07-13T01:48:10.106Z</updated>
+    
+    
+    <summary type="html">试一下摘要</summary>
+    
+    
+    
+    <category term="实操记录" scheme="http://example.com/categories/%E5%AE%9E%E6%93%8D%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="搭博客" scheme="http://example.com/tags/%E6%90%AD%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="踩坑" scheme="http://example.com/tags/%E8%B8%A9%E5%9D%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://example.com/2023/07/075388a72a39.html"/>
+    <id>http://example.com/2023/07/075388a72a39.html</id>
+    <published>2023-07-11T06:37:32.565Z</published>
+    <updated>2023-07-12T07:35:47.209Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="嘿嘿" scheme="http://example.com/categories/%E5%98%BF%E5%98%BF/"/>
+    
+    
+  </entry>
+  
+</feed>
