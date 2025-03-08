@@ -490,8 +490,23 @@
   </entry>
   <entry>
     <title></title>
-    <url>/2025/03/1f4beca1a21f.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>test2<br>![[./Pasted image 20250307151401.png|Pasted image 20250307151401]]</p>
+    <url>/2025/03/f844f697bc96.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>崩溃了哈哈哈到底怎么整？<br>需求：</p>
+<ol>
+<li>图片显示<ul>
+<li>比较简单的解决方案是使用相对路径</li>
+</ul>
+</li>
+<li>所以的笔记都在学习仓库里，不可能单独在博客仓库下编辑，所以需要从学习仓库里把笔记和图片都传到博客仓库<ul>
+<li>解决方案：使用obsidian插件envelope，将学习仓库中的笔记上传再pull，然后再执行hexo d -g（后续要考虑自动化）</li>
+<li>问题：该插件所有的文章都被传到同一个文件夹,,,</li>
+</ul>
+</li>
+</ol>
+<p>test3:<br><img lazyload="" src="/images/loading.svg" data-src="/./Pasted%20image%2020250308154852.png"></p>
 ]]></content>
+      <categories>
+        <category>嘿嘿</category>
+      </categories>
   </entry>
 </search>
