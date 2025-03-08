@@ -22,352 +22,6 @@
       </categories>
   </entry>
   <entry>
-    <title>计算机网络自学（更新中）</title>
-    <url>/2023/07/6328c60e2bef.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="导论"><a href="#导论" class="headerlink" title="导论"></a>导论</h1><h2 id="TCP与UDP"><a href="#TCP与UDP" class="headerlink" title="TCP与UDP"></a>TCP与UDP</h2><ul>
-<li>tcp向上传输的是可靠的，编号、校验、重传等，消耗时间、空间</li>
-<li>对可靠性要求不高但对实时性要求高-&gt;UDP数据传输协议，所以常见于多媒体应用</li>
-<li><a class="link" href="https://pic.imgdb.cn/item/64af49711ddac507cc874125.png">https://pic.imgdb.cn/item/64af49711ddac507cc874125.png <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 左TCP右UDP，TCP先连接</li>
-<li>传输层是为多个远程应用进程提供服务的 在网络层提供的端到端的服务基础上实现，将主机到主机细分到进程到进程，是网络层的细分，不可靠到可靠</li>
-<li>网络层源主机到目标主机，主机到主机，是尽力而为的（？可能会丢包等）端到端（其中有很多点到点）所以在数据链路层提供的相邻两点点到点服务基础上才能实现</li>
-<li>传统？互联网网络层：路由：路由协议（路由器交换信息，路由算法-&gt;路由表）转发： IP协议（对到来的分组进行转发）</li>
-<li>SDN<ul>
-<li>数据平面</li>
-<li>控制平面</li>
-</ul>
-</li>
-</ul>
-<h2 id="第一章-网络"><a href="#第一章-网络" class="headerlink" title="第一章 网络"></a>第一章 网络</h2><h2 id="什么是网络"><a href="#什么是网络" class="headerlink" title="什么是网络"></a>什么是网络</h2><ul>
-<li>节点<ul>
-<li>主机节点 画方<ul>
-<li>host 联网的冰箱等联网设备 </li>
-<li>end system</li>
-</ul>
-</li>
-<li>数据交换节点 路由器、防火墙（网络层）、交换机（链路层）等既不是源、也不是目标，只进行转发 画圆的</li>
-</ul>
-</li>
-<li>边 链路<ul>
-<li>接入链路：主机和数据交换节点间access</li>
-<li>骨干链路：数据交换节点之间的 backbone</li>
-</ul>
-</li>
-<li>互联网：以TCPIP为主的一簇协议工作的网络</li>
-<li>协议：==对等层的实体==在通信时应当遵循的规则的集合 <a class="link" href="https://pic.imgdb.cn/item/64af49da1ddac507cc8830c0.png">https://pic.imgdb.cn/item/64af49da1ddac507cc8830c0.png <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><ul>
-<li>格式<ul>
-<li>语法</li>
-<li>语义</li>
-</ul>
-</li>
-<li>次序 如收到请求后才发响应</li>
-<li>动作</li>
-</ul>
-</li>
-<li>从服务层面看网络：<ul>
-<li>分布式应用</li>
-<li>为分布式应用提供服务的基础设施，方式为api，两种形式如下<ul>
-<li>面向连接的服务TCPIP</li>
-<li>无连接的服务UDP <a class="link" href="https://pic.imgdb.cn/item/64af4a1b1ddac507cc88b9c5.png">https://pic.imgdb.cn/item/64af4a1b1ddac507cc88b9c5.png <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>网络结构 三个子系统<ul>
-<li>边缘系统edge</li>
-<li>接入系统access</li>
-<li>网络核心core 数据交换<br><a class="link" href="https://pic.imgdb.cn/item/64af4a701ddac507cc8986ce.png">https://pic.imgdb.cn/item/64af4a701ddac507cc8986ce.png <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link" href="https://pic.imgdb.cn/item/64af4a1b1ddac507cc88b9c5.png">https://pic.imgdb.cn/item/64af4a1b1ddac507cc88b9c5.png <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
-</ul>
-</li>
-</ul>
-<h2 id="网络边缘"><a href="#网络边缘" class="headerlink" title="网络边缘"></a>网络边缘</h2><p><a class="link" href="https://pic.imgdb.cn/item/64af4ace1ddac507cc8a6a2b.png">https://pic.imgdb.cn/item/64af4ace1ddac507cc8a6a2b.png <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<ul>
-<li><p>运用进程间通信的模式</p>
-<ul>
-<li>CS模式 客户端服务器模式 ==服务器是主要的，首先运转==，守在端口等待客户端的请求，客户端主动请求服务器的资源，主为服务器，从为客户端<ul>
-<li>问题 请求多的时候达到阈值会断崖，存在可扩展性的问题？（不全）扩容满足不了用户的请求</li>
-</ul>
-</li>
-<li>对等模式（P2P）<ul>
-<li>每个节点==既是客户端又是服务器==，</li>
-<li>请求资源的节点越多的同时 提供资源的节点也越来越多，且通信是==分布式==的，可以向不同节点请求</li>
-<li>文件分发系统中常用 如迅雷、电驴</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>TCP面向连接TCP：握手，两者做好准备、底层协议栈 做好准备，为后续通信分配资源等，通信状态==只==在端系统维护（面向连接） <a class="link" href="https://pic.imgdb.cn/item/64af4b121ddac507cc8b0f2f.png">https://pic.imgdb.cn/item/64af4b121ddac507cc8b0f2f.png <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<ul>
-<li>可靠 保序 （排序编号重传等 有时间代价</li>
-<li>流量控制：协调发送和接收速度，不让发送方发送太快以至于超过接收方的处理速度</li>
-<li>拥塞控制 考虑到网络路径的通行能力</li>
-</ul>
-</li>
-<li><p>UDP 无连接的</p>
-<ul>
-<li>不可靠 丢了就丢了，如定时采样的东西丢了也没事就可以采用UDP<ul>
-<li>不用花时间的代价</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><a class="link" href="https://pic.imgdb.cn/item/64af4b281ddac507cc8b4b4f.png">https://pic.imgdb.cn/item/64af4b281ddac507cc8b4b4f.png <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h2 id="网络核心"><a href="#网络核心" class="headerlink" title="网络核心"></a>网络核心</h2><ul>
-<li><p>分组交换</p>
-<ul>
-<li>使用的是带宽的全部</li>
-<li>以分组packet为单位，在每个节点全存储，查路由表，通过某个端口全转发来实现网络核心数据交换的作用</li>
-<li>为什么要先完全存储？<ul>
-<li>在使用这条链路的时候，其他的链路可以被其他主机对所使用 共享</li>
-</ul>
-</li>
-<li>好处 按需使用，不占用网络资源 共享 支持的主机通信对数量更多 每个的节点不用维护主机对的映射</li>
-<li>缺点<ul>
-<li>延迟比线路交换长，线路交换只耽误一个比特的时间，而分组交换要耽误存储的时间</li>
-<li>有排队时间，若这条链路还有别的分组要传<ul>
-<li>排队延迟是随机的，后来的分组的排队延迟比前面的分组长</li>
-</ul>
-</li>
-<li>拥塞：路由器的缓存用完了的话，分组将会被drop，所以有可能丢失</li>
-</ul>
-</li>
-<li>举例 <a class="link" href="https://pic.imgdb.cn/item/64af4bb41ddac507cc8ccaaf.png![[Pasted">https://pic.imgdb.cn/item/64af4bb41ddac507cc8ccaaf.png![[Pasted <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>  <a class="link" href="https://pic.imgdb.cn/item/64af4bd11ddac507cc8d1d90.png%E6%B3%A8%E6%84%8F%E5%8F%91%E9%80%81%E5%92%8C%E6%8E%A5%E6%94%B6%E6%98%AF%E4%B8%80%E4%BB%B6%E4%BA%8B%E7%9A%84%E4%B8%A4%E9%9D%A2%EF%BC%8C%E6%89%80%E4%BB%A5%E5%8F%AA%E7%AE%97%E4%B8%80%E6%AC%A1">https://pic.imgdb.cn/item/64af4bd11ddac507cc8d1d90.png注意发送和接收是一件事的两面，所以只算一次 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
-<li>划分时间片的方式，是随机的（不同于线路交换（固定的））称为<strong>统计多路复用</strong></li>
-<li>方式 按照网络层有没有连接分为 <ul>
-<li>数据报  无连接 分组写了目标主机的完整地址，两主机在通讯前不需要握手，每个分组的传递都是独立的<ul>
-<li>因为路由表有可能变 即使目标主机ip没变，也有可能走不同的路线</li>
-<li>路由器中不维护主机主机间通讯状态，查路由表就转走</li>
-</ul>
-</li>
-<li>虚电路 有连接 主机和目标主机通讯前要握手建立网络层的连接，交换节点间要保持通讯的状态，建立了虚拟电路，每个分组携带了虚电路号而不是目标主机的完整地址，同样是存储转发<ul>
-<li>怎么建立？靠信令</li>
-<li>要维护通讯关系</li>
-<li>这叫有连接而不是面向连接（通讯状态的维护仅仅体现在端系统）</li>
-<li>虚电路和tcp<ul>
-<li>比如有个简单网络，主机A跟D需要通信。通过两个路由节点B跟C。类似这样A&lt;—&gt;B&lt;—-&gt;C&lt;—&gt;D这时候在A和D之间，建立TCP连接，TCP协议是A和D之间的。那么，在整个链路中，A和D之间的包经过路由器B和C的时候，B和C如果针对每个这样的包都进行路由交换，会比较慢，那么这时候，B和C可以建立某种虚电路。这样：A&lt;—&gt;B&lt;===&gt;C&lt;—&gt;D需要注意的是，B和C之间的虚电路并不是仅仅服务于A到D的包的，他服务于B到C的包，也就是说如果通过B到C有其他的数据包，也可以通过虚电路。所以，简单来说的话，TCP是连接层协议，一般用于网络端点间。虚电路属于网络层，一般虚电路用于路由节点之间。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>电路交换，为呼叫预留端-端资源</p>
-<ul>
-<li>独享的，专用资源，而计算机通讯具有很强的突发性，线路交换不太适合</li>
-<li>要求建立呼叫连接，有线路建立的时间</li>
-<li>保证性能</li>
-<li>可能会被浪费资源，</li>
-<li>常用于固话、移动通讯 <a class="link" href="https://pic.imgdb.cn/item/64af4bee1ddac507cc8d6933.png">https://pic.imgdb.cn/item/64af4bee1ddac507cc8d6933.png <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
-<li><a class="link" href="https://pic.imgdb.cn/item/64af4c041ddac507cc8da8a0.png">https://pic.imgdb.cn/item/64af4c041ddac507cc8da8a0.png <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
-<li>举例<ul>
-<li>注意还有电磁波穿越空间的时间，在局域网时传</li>
-<li>播延迟才可忽略</li>
-<li>64kbs每面传输64k bit <a class="link" href="https://pic.imgdb.cn/item/64af4c1a1ddac507cc8de411.png">https://pic.imgdb.cn/item/64af4c1a1ddac507cc8de411.png <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
-</ul>
-</li>
-<li>缺点<ul>
-<li>连接建立时间长</li>
-<li>计算机间通信具有突发性，若使用线路交换则浪费的片多<ul>
-<li>即使这个call没有数据传递，则其所占据的片也不能被别的呼叫胡勇</li>
-</ul>
-</li>
-<li>可靠性不高<ul>
-<li>交换机要维持很多对piece和piece的映射关系，一旦核心节点宕机，影响范围广</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>方式：频分、时分、波分</li>
-</ul>
-</li>
-</ul>
-<h2 id="接入网和物理媒体"><a href="#接入网和物理媒体" class="headerlink" title="接入网和物理媒体"></a>接入网和物理媒体</h2><ul>
-<li>边缘端系统通过接入网接入网络核心</li>
-<li>住宅接入：modom<ul>
-<li>利用已有电话线，调制、解调 在音频的载波上加载数据</li>
-</ul>
-</li>
-<li>DSL<ul>
-<li>使用现有电话线</li>
-<li>家庭电话线使用不同的频率进行编码：<br>  &nbsp;<strong>高速上行信道</strong>，位于50kHz到1MHz频段；<br>  &nbsp;<strong>中速下行信道</strong>，位于4kHz到50hHz频段；<br>  &nbsp;<strong>普通的双向电话信道</strong>，位于0到4kHz频段。<br>  上行下行速率不等</li>
-<li>一个分配器把到达家庭的 数据信号 和 电话信号 分隔开，并将 数据信号 转发给DSL</li>
-</ul>
-</li>
-<li>线缆网络</li>
-<li><a class="link" href="https://blog.csdn.net/weixin_43098506/article/details/124280360">(86条消息) 【计算机网络】边缘路由器 三种家庭接入网(光纤到户) DSL、HFC与PON_pon dsl_脚踏实地的大梦想家的博客-CSDN博客 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><a class="link" href="https://blog.csdn.net/weixin_43098506/article/details/124280360">(86条消息) 【计算机网络】边缘路由器 三种家庭接入网(光纤到户) DSL、HFC与PON_pon dsl_脚踏实地的大梦想家的博客-CSDN博客 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
-</ul>
-<h2 id="网络结构和ISP"><a href="#网络结构和ISP" class="headerlink" title="网络结构和ISP"></a>网络结构和ISP</h2><p>把关系密集的，在一个网络当中的，成为一个ISP 的网络</p>
-<ul>
-<li>网络的结构<ul>
-<li><p>接入ISP 端系统通过接入ISP接入到互联网，如移动、联通</p>
-</li>
-<li><p>接入ISP直接必须是互联的，如一个用的移动一个用的联通，若不互联则不能通信</p>
-<ul>
-<li>如何将他们互联？<ul>
-<li>每两个直接相连，可扩展性scalability差，因为扩展到一定规模，系统i性能下降非常快</li>
-<li>将每个接入ISP都连接到全局ISP <a class="link" href="https://pic.imgdb.cn/item/64af4c3b1ddac507cc8e4a64.png">https://pic.imgdb.cn/item/64af4c3b1ddac507cc8e4a64.png <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
-<li>合作IXP <a class="link" href="https://pic.imgdb.cn/item/64af4c3f1ddac507cc8e56db.png">https://pic.imgdb.cn/item/64af4c3f1ddac507cc8e56db.png <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
-<li>区域ISP 小的运营商regional access</li>
-<li><a class="link" href="https://pic.imgdb.cn/item/64af4c431ddac507cc8e61cf.png">https://pic.imgdb.cn/item/64af4c431ddac507cc8e61cf.png <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>ICP如谷歌、百度content provider network</p>
-<ul>
-<li>布置全球数据中心机房（靠核心ISP比较近的地方，因为用户要先通过ISP，提高用户体验），自己用专线连起来</li>
-<li>如果要有不同</li>
-<li><a class="link" href="https://pic.imgdb.cn/item/64af4cb91ddac507cc8fc89f.png">https://pic.imgdb.cn/item/64af4cb91ddac507cc8fc89f.png <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
-</ul>
-</li>
-<li><p>总结： </p>
-<ul>
-<li>中心：第一层ISP，国家/国际覆盖（点少，点和点间带宽大），速率极高，贷款大<ul>
-<li>直接与其他第一层ISP相连<ul>
-<li>通过peer连接或者和IXP</li>
-</ul>
-</li>
-<li>与大量的第二层ISP和其他客户网络连接</li>
-</ul>
-</li>
-<li>第二层ISP 最终目的通过合作把互联的范围扩大</li>
-<li>第三层ISP 与其他本地ISP 如接入网，与端系统最近，把终端接进</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="分组延时，丢失和吞吐量"><a href="#分组延时，丢失和吞吐量" class="headerlink" title="分组延时，丢失和吞吐量"></a>分组延时，丢失和吞吐量</h2><ul>
-<li>一跳（hop）所要经历的四种分组延时<ul>
-<li>节点处理延迟，通常是微秒数量级或更少<ul>
-<li>检查分组有无出错</li>
-<li>查路由表、处理等</li>
-</ul>
-</li>
-<li>排队延时 取决于当时网络情况（拥塞情况）<ul>
-<li>流量强度I=La/R, a指单位时间内需要这条篇链路转发的分组数量，每个分组长度L，所以I=单位时间这条链路需要放出的bit数量/带宽<ul>
-<li>范围是0-1</li>
-<li>流量强度越接近1，排队延时趋近于无限大</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>传输trasmistion延时 如R=Mbps,分组长度L=Mbits,传输延时为L/R</li>
-<li>传播延时 越过空间需要耗费的时间代价，物理链路的长度、在媒体的传播速度，所以若两个节点物理距离近的话传播延时基本可忽略不计</li>
-<li>A主机到B主机需要很多跳</li>
-</ul>
-</li>
-<li>信道容量 <ul>
-<li>容量大 一个信道可以容纳很多分组</li>
-<li>容量小 局域网 一个分组还没打完呢另一端就收到头的</li>
-</ul>
-</li>
-<li>ICMP协议 互联网控制报文协议<ul>
-<li>TTL time to leave生存时间是有限制，过一跳路由器TTL-1，若TTL=0的时候分组被抛掉（会通过ICMP协议告诉源主机，还说是我（某个路由器）干的）</li>
-<li>可以利用TTL=1,2…测试每一跳的延时</li>
-</ul>
-</li>
-<li>分组丢失<ul>
-<li>每条链路对应的输出队列总是有限的，所以可能被用完，链路的队列缓冲区容量有限</li>
-<li>分组到达一个满的队列时该分组会被drop</li>
-<li>三种应对<ul>
-<li>若上一个节点的链路是可靠的，则上一个节点重传，</li>
-<li>而若是不可靠的如以太网，且应用进程是通过TCP来放出分组则为源主机重传，</li>
-<li>若链路是不可靠的且协议是UDP则源主机也不重传即根本不重传 <a class="link" href="https://pic.imgdb.cn/item/64af4cdd1ddac507cc90451a.png">https://pic.imgdb.cn/item/64af4cdd1ddac507cc90451a.png <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>吞吐量 <ul>
-<li>单位时间内从源主机到目标主机的有效的比特数量/单位时间<ul>
-<li>瞬间吞吐量 在一个时间点的速率</li>
-<li>平均吞吐量</li>
-<li>吞吐量取决于瓶颈链路（获得带宽最少的）</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="协议层次和服务模型"><a href="#协议层次和服务模型" class="headerlink" title="协议层次和服务模型"></a>协议层次和服务模型</h2><ul>
-<li>功能模块化 相互调用</li>
-<li>分层 仅相邻层次的可调用 特殊的模块化</li>
-<li>大问题分解 便于采用新技术</li>
-<li>互联网复杂功能的实现<ul>
-<li>上层模块可以使用下层服务，每层次通过层间接口向上层提供服务</li>
-<li>每层实现一个或一组功能，通过协议实体的交互动作，对等层实体通过一些协议交换控制信息<ul>
-<li>怎么把协议数据单元PDU传给对方实体？实体<ul>
-<li>通过层间接口借助于下层提供的服务</li>
-</ul>
-</li>
-<li>协议的目的是为了向上层提供更好的服务，协议的实现要借助下层的服务</li>
-</ul>
-</li>
-<li>本层向上层提供的服务也就包括了本层及以下的所有服务</li>
-</ul>
-</li>
-<li>服务和服务访问点<ul>
-<li>服务 低层实体向上层实体提供他们之间通信的能力，是垂直的<ul>
-<li>服务用户和服务访问点</li>
-<li>若有三个应用，对于TCP来说是三个服务用户</li>
-<li>服务访问点来区分报文给谁，下层服务提供者用于区分不同上层用户的信息，是在层间的</li>
-</ul>
-</li>
-<li>原语 上层使用下层服务的形式，上层要使用什么具体的服务？告诉服务提供者</li>
-<li>服务访问点SAP sercices access point 使用下层提供的服务通过层间的接口——地点</li>
-</ul>
-</li>
-<li>SDU服务数据单元，加上一些控制信息通过层间接口传到下一层，抛掉一些控制信息再加上一些本层的控制信息，形成本层PDU协议数据单元，跟对等层交换信息都是通过PDU进行交换的<ul>
-<li>SDU很大的时候有可能分成小块，每块都在头部加上控制信息形成大小合适的PDU</li>
-<li>SDU很小的时候 合在一起再加一个头</li>
-<li>总之，body部分来自于上层SDU</li>
-<li>PDU 每层交换的数据单元的称呼都不一样</li>
-</ul>
-</li>
-<li>分层处理的好处<ul>
-<li>大问题分解 便于采用新技术</li>
-</ul>
-</li>
-<li>坏处：<ul>
-<li>分布实现，子系统之间要相互交换信息导致效率相对更低</li>
-</ul>
-</li>
-<li>互联网协议栈<ul>
-<li><a class="link" href="https://pic.imgdb.cn/item/64af4cfd1ddac507cc90afe6.png">https://pic.imgdb.cn/item/64af4cfd1ddac507cc90afe6.png <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
-<li>物理层<ul>
-<li>上层下来的帧一组一组地变成物理信号，承载在媒体之上，传输单位时<strong>bit</strong></li>
-</ul>
-</li>
-<li>链路层<ul>
-<li>在物理层服务基础上在相邻两点间传输<strong>以帧</strong>为单位的数据，区分物理层比特的帧头帧尾</li>
-</ul>
-</li>
-<li>网络层<ul>
-<li>在链路层基础上提供以分组为单位的端到端（主机到主机）的数据传输</li>
-<li>不可靠的</li>
-</ul>
-</li>
-<li>传输层<ul>
-<li>把通信从主机到主机细分为进程到进程</li>
-<li>把网络层提供的可能不可靠的（乱序的、丢的等）变成可靠的</li>
-</ul>
-</li>
-<li>应用层</li>
-</ul>
-</li>
-</ul>
-<p>封装和解封装没看<br><img lazyload="" src="/images/loading.svg" data-src="https://pic.imgdb.cn/item/64af57a21ddac507ccaefe9c.png"></p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>学习</tag>
-        <tag>计网</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>build my blog</title>
     <url>/2023/07/122701f1f353.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h3><p>教程，借用llq的博客<a class="link" href="https://xmnsatay.github.io/2023/02/26/%E8%AE%B0%E5%BD%95%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">https://xmnsatay.github.io/2023/02/26/%E8%AE%B0%E5%BD%95%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
@@ -442,15 +96,6 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/2025/03/23e7a70fea4d.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p><img lazyload="" src="/images/loading.svg" data-src="/./Pasted%20image%2020250308164722.png"></p>
-]]></content>
-      <categories>
-        <category>嘿嘿</category>
-      </categories>
-  </entry>
-  <entry>
     <title>迁移博客，obsidian及图片路径相关问题</title>
     <url>/2025/03/3ab441bd3ff9.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line">发现报错：</span><br><span class="line"></span><br><span class="line">```text</span><br><span class="line">ERROR Deployer not found: git</span><br></pre></td></tr></tbody></table></figure></div>
@@ -473,7 +118,309 @@
 </ul>
 </li>
 </ol>
-<p><img lazyload="" src="/images/loading.svg" data-src="/../images/Pasted%20image%2020250306201923.png"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/../images/Pasted%20image%2020250306201923.png"><br><img lazyload="" src="/images/loading.svg" data-src="/Pasted%20image%2020250308170256.png"></p>
+]]></content>
+      <categories>
+        <category>嘿嘿</category>
+      </categories>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/03/a1a6e95e6be5.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>lalalla<img lazyload="" src="/images/loading.svg" data-src="/../images/Pasted%20image%2020250308210432.png"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Lab4-3同态加密实验</title>
+    <url>/2025/03/0449522b56bb.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>这一篇测试一下移动图片+批量改图片内链脚本</p>
+<h1 id="Lab4-3同态加密实验"><a href="#Lab4-3同态加密实验" class="headerlink" title="Lab4-3同态加密实验"></a>Lab4-3同态加密实验</h1><ul>
+<li><p>课程：大数据安全</p>
+</li>
+<li><p>组号：第9组</p>
+</li>
+<li><p>成员：王雨辰 2022211650    李孜炎 2022211651    肖壹夫 2022211655    徐同一 2022211657    张丽娜 2022211673</p>
+</li>
+</ul>
+<p>	</p>
+<p><strong>实验内容：</strong><br>同态加密模块是数据安全教学实验中的一个重要模块，具体功能包括Paillier加法同态加密算法的<strong>实现</strong>、加法同态加密算法与典型的全同态加密算法之间<strong>性能比较分析</strong>、基于安全等级的<strong>密钥长度选取方法</strong>、经典问题（平均工资问题）的<strong>编程实现</strong></p>
+<h2 id="1-Paillier加法同态加密算法的实现"><a href="#1-Paillier加法同态加密算法的实现" class="headerlink" title="1. Paillier加法同态加密算法的实现"></a>1. Paillier加法同态加密算法的实现</h2><h6 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h6><ul>
+<li><strong>生成密钥对</strong>：Paillier加密算法需要生成公钥和私钥。首先需要选择两个大素数p和 q，计算 n=p×q，然后计算 λ=lcm(p−1,q−1)，生成公钥 (n,g)和私钥 λ。</li>
+<li><strong>加密</strong>：选择一个明文 m，然后计算加密密文 c:$$c=g^m\times r^n  \  mod\  n^2$$其中，r 是一个随机数，且 r需要满足与 n互质。</li>
+<li><strong>加法同态性</strong>：Paillier加密支持加法同态性，即对于两个加密值 $c_1$和 $c_2$，可以通过以下操作计算加密后的结果：$$c_1 \times c_2 \mod n^2 = \text{Enc}(m_1 + m_2)$$这样，在加密后的数据上直接进行乘法操作，解密后即为明文相加的结果。</li>
+<li><strong>解密</strong>：使用私钥 λ 解密密文：$$m = \frac{L(c^\lambda \mod n^2)}{L(g^\lambda \mod n^2)} \mod n$$其中，$L(x) = \frac{x - 1}{n}$是一个特殊的函数。</li>
+</ul>
+<h6 id="验证："><a href="#验证：" class="headerlink" title="验证："></a><strong>验证：</strong></h6><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> phe <span class="keyword">import</span> paillier  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">paillier_homomorphic_addition</span>():  </span><br><span class="line">    <span class="comment"># 生成 Paillier 密钥对  </span></span><br><span class="line">    public_key, private_key = paillier.generate_paillier_keypair()  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 明文数  </span></span><br><span class="line">    m1 = <span class="number">100</span>  </span><br><span class="line">    m2 = <span class="number">200</span>  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 使用公钥加密明文数  </span></span><br><span class="line">    encrypted1 = public_key.encrypt(m1)  </span><br><span class="line">    encrypted2 = public_key.encrypt(m2)  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 同态加法（对加密的数进行加法运算）  </span></span><br><span class="line">    encrypted_sum = encrypted1 + encrypted2  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 使用私钥解密同态加法结果  </span></span><br><span class="line">    decrypted_sum = private_key.decrypt(encrypted_sum)  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 输出结果  </span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f"Decrypted sum: <span class="subst">{decrypted_sum}</span>"</span>)  <span class="comment"># 应该输出 300  </span></span><br><span class="line"><span class="comment"># 执行同态加法  </span></span><br><span class="line">paillier_homomorphic_addition()</span><br></pre></td></tr></tbody></table></figure></div>
+<p>![[./Pasted image 20241115232100.png|Pasted image 20241115232100]]</p>
+<hr>
+<h2 id="2-加法同态加密算法与典型的全同态加密算法之间性能比较分析"><a href="#2-加法同态加密算法与典型的全同态加密算法之间性能比较分析" class="headerlink" title="2. 加法同态加密算法与典型的全同态加密算法之间性能比较分析"></a>2. 加法同态加密算法与典型的全同态加密算法之间性能比较分析</h2><p>进行 加法同态加密算法（如 Paillier）与 <strong>典型的全同态加密算法</strong>（如 BFV、CKKS 等）的性能比较分析，涉及多个方面的考量，包括加密/解密速度、同态运算的效率、密文大小、适用场景等。全同态加密（FHE，Fully Homomorphic Encryption）是支持加法和乘法等多种同态操作的加密方案，而加法同态加密（如 Paillier）只支持加法操作。</p>
+<h4 id="2-1-加解密速度比较分析"><a href="#2-1-加解密速度比较分析" class="headerlink" title="2.1 加解密速度比较分析"></a>2.1 加解密速度比较分析</h4><ul>
+<li><strong>加法同态加密（如 Paillier）：</strong><ul>
+<li>Paillier 加密算法只支持加法同态运算，因此加密和解密速度相对较快，特别是在处理大批量数据时，效率较高。</li>
+<li>加密操作通常是基于指数运算，解密操作相对较简单，通常涉及一个模逆运算。</li>
+<li>由于只支持加法，同态加法操作通常比较快速，适合处理一些对加法比较密集的任务（如统计计算、隐私保护的加法操作等）。</li>
+</ul>
+</li>
+<li><strong>全同态加密（如 BFV、CKKS）：</strong><ul>
+<li>全同态加密支持加法、乘法、以及更多复杂的运算，因此其加密和解密的计算复杂度较高。</li>
+<li>在支持多种同态运算时，解密过程往往需要多次密文解压、归约和解密，计算负担较大。</li>
+<li>由于全同态加密支持多种运算，它的加密和解密时间会显著大于加法同态加密。</li>
+</ul>
+</li>
+</ul>
+<h6 id="代码（使用phe库版）"><a href="#代码（使用phe库版）" class="headerlink" title="代码（使用phe库版）"></a>代码（使用phe库版）</h6><p>compare.py</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time  </span><br><span class="line"><span class="keyword">import</span> phe  </span><br><span class="line"><span class="keyword">import</span> tenseal <span class="keyword">as</span> ts  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># ======================= 优化后的 Paillier 加法同态加解密 =======================def paillier_encryption_batch(values):  </span></span><br><span class="line">    <span class="comment"># 创建 Paillier 密钥对  </span></span><br><span class="line">    public_key, private_key = phe.generate_paillier_keypair()  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 批量加密数据  </span></span><br><span class="line">    encrypted_values = [public_key.encrypt(value) <span class="keyword">for</span> value <span class="keyword">in</span> values]  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 同态加法  </span></span><br><span class="line">    encrypted_sum = encrypted_values[<span class="number">0</span>]  </span><br><span class="line">    <span class="keyword">for</span> enc_value <span class="keyword">in</span> encrypted_values[<span class="number">1</span>:]:  </span><br><span class="line">        encrypted_sum += enc_value  <span class="comment"># 批量加法  </span></span><br><span class="line">  </span><br><span class="line">    <span class="keyword">return</span> encrypted_sum, public_key, private_key  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">paillier_decryption</span>(<span class="params">encrypted_value, private_key</span>):  </span><br><span class="line">    <span class="comment"># 解密数据  </span></span><br><span class="line">    decrypted_value = private_key.decrypt(encrypted_value)  </span><br><span class="line">    <span class="keyword">return</span> decrypted_value  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># ======================= 全同态加解密（TenSEAL - CKKS） =======================def full_homomorphic_encryption(value1, value2, context):  </span></span><br><span class="line">    <span class="comment"># 创建 CKKS 向量并加密  </span></span><br><span class="line">    encrypted_value1 = ts.ckks_vector(context, [value1])  </span><br><span class="line">    encrypted_value2 = ts.ckks_vector(context, [value2])  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 同态加法  </span></span><br><span class="line">    encrypted_sum = encrypted_value1 + encrypted_value2  </span><br><span class="line">    <span class="keyword">return</span> encrypted_sum  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">full_homomorphic_decryption</span>(<span class="params">encrypted_value, secret_key</span>):  </span><br><span class="line">    <span class="comment"># 解密数据  </span></span><br><span class="line">    decrypted_value = encrypted_value.decrypt(secret_key)  </span><br><span class="line">    <span class="keyword">return</span> decrypted_value[<span class="number">0</span>]  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># ======================= 实验代码：比较加法同态和全同态加解密速度 =======================# Paillier 加法同态加解密（优化版）  </span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">paillier_test</span>():  </span><br><span class="line">    <span class="comment"># 测试数据  </span></span><br><span class="line">    values = [<span class="number">15</span>, <span class="number">20</span>]  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 计时  </span></span><br><span class="line">    start_time = time.time()  </span><br><span class="line">    encrypted_sum, public_key, private_key = paillier_encryption_batch(values)  </span><br><span class="line">    decrypted_sum = paillier_decryption(encrypted_sum, private_key)  </span><br><span class="line">    end_time = time.time()  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 输出 Paillier 加解密结果  </span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f"Paillier 加解密时间: <span class="subst">{end_time - start_time}</span> 秒"</span>)  </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f"Paillier 解密结果: <span class="subst">{decrypted_sum}</span>"</span>)  </span><br><span class="line">    <span class="keyword">return</span> end_time - start_time  <span class="comment"># 返回加解密时间  </span></span><br><span class="line">  </span><br><span class="line"><span class="comment"># 全同态加解密（TenSEAL - CKKS）  </span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">full_homomorphic_test</span>():  </span><br><span class="line">    <span class="comment"># 创建 TenSEAL 上下文，初始化加密参数  </span></span><br><span class="line">    context = ts.context(ts.SCHEME_TYPE.CKKS, poly_modulus_degree=<span class="number">8192</span>, coeff_mod_bit_sizes=[<span class="number">60</span>, <span class="number">40</span>, <span class="number">60</span>])  </span><br><span class="line">    context.global_scale = <span class="number">2</span>**<span class="number">40</span>  <span class="comment"># 设置 global scale    context.generate_galois_keys()  # 生成 Galois 密钥  </span></span><br><span class="line">    secret_key = context.secret_key()  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 测试数据  </span></span><br><span class="line">    value1, value2 = <span class="number">15</span>, <span class="number">20</span>  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 计时  </span></span><br><span class="line">    start_time = time.time()  </span><br><span class="line">    encrypted_sum = full_homomorphic_encryption(value1, value2, context)  </span><br><span class="line">    decrypted_sum = full_homomorphic_decryption(encrypted_sum, secret_key)  </span><br><span class="line">    end_time = time.time()  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 输出 TenSEAL 加解密结果  </span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f"全同态加解密时间: <span class="subst">{end_time - start_time}</span> 秒"</span>)  </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f"全同态解密结果: <span class="subst">{decrypted_sum}</span>"</span>)  </span><br><span class="line">    <span class="keyword">return</span> end_time - start_time  <span class="comment"># 返回加解密时间  </span></span><br><span class="line">  </span><br><span class="line"><span class="comment"># ======================= 主程序：比较 Paillier 和 TenSEAL 的性能 =======================if __name__ == "__main__":  </span></span><br><span class="line">    <span class="comment"># 比较加法同态加解密时间（Paillier）  </span></span><br><span class="line">    paillier_time = paillier_test()  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 比较全同态加解密时间（TenSEAL）  </span></span><br><span class="line">    full_homomorphic_time = full_homomorphic_test()  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 输出对比结果  </span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f"\n实验结果："</span>)  </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f"Paillier 加法同态加解密时间: <span class="subst">{paillier_time}</span> 秒"</span>)  </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f"全同态加解密时间 (TenSEAL): <span class="subst">{full_homomorphic_time}</span> 秒"</span>)</span><br></pre></td></tr></tbody></table></figure></div>
+
+<p><img lazyload="" src="/images/loading.svg" data-src="/../images/Pasted%20image%2020241118154833.png"></p>
+<h6 id="代码（gmpy2）"><a href="#代码（gmpy2）" class="headerlink" title="代码（gmpy2）"></a>代码（gmpy2）</h6><p>compare2.py<br>这个版本使用gmpy2库自定义实现paillier，相比于上个版本使用phe库标准的paillier实现，加解密速度快了许多<br>原因：</p>
+<ul>
+<li><ul>
+<li><strong><code>gmpy2</code> 的使用</strong>：手动实现中使用 <code>gmpy2</code> 来处理大整数运算，这个库在性能上远远优于 Python 的默认整数运算，因为它底层使用了 GMP 库（一个高性能的多精度算术库），专门用于大数运算。而 <code>phe</code> 库通常使用 Python 原生的大整数对象，运算效率较低。</li>
+</ul>
+</li>
+<li><p><strong>随机数生成优化</strong>：使用 <code>random.SystemRandom()</code> 提供系统级的随机数生成，结合 <code>gmpy2.next_prime()</code> 来迅速找到合适的大素数，这减少了冗余计算，提升了密钥生成效率。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">@staticmethod</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">_get_prime_over</span>(<span class="params">N</span>):</span><br><span class="line">    rand_func = random.SystemRandom()</span><br><span class="line">    r = gmpy2.mpz(rand_func.getrandbits(N))</span><br><span class="line">    r = gmpy2.bit_set(r, N - <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">int</span>(gmpy2.next_prime(r))</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure></div>
+</li>
+<li><p><code>gmpy2.powmod()</code> 是直接在整数层面进行快速幂运算和取模操作，这在加密过程中的计算 <code>g^m % n^2</code> 和 <code>r^n % n^2</code> 非常高效。相比之下，<code>phe</code> 库的实现可能会包含额外的类型检查和更复杂的逻辑，这会增加计算时间。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">encrypt</span>(<span class="params">self, m</span>):</span><br><span class="line">    r = random.randint(<span class="number">1</span>, self.public_key.n - <span class="number">1</span>)</span><br><span class="line">    cipher_text = gmpy2.mod(</span><br><span class="line">        gmpy2.powmod(self.public_key.g, m, self.n_square) * gmpy2.powmod(r, self.public_key.n, self.n_square),</span><br><span class="line">        self.n_square)</span><br><span class="line">    cipher_text = CryptoNumber(cipher_text, self.n_square)</span><br><span class="line">    <span class="keyword">return</span> cipher_text</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure></div></li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time  </span><br><span class="line"><span class="keyword">import</span> tenseal <span class="keyword">as</span> ts  </span><br><span class="line"><span class="keyword">import</span> random  </span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> namedtuple  </span><br><span class="line"><span class="keyword">import</span> gmpy2  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># ======================= Paillier 密钥生成 =======================class PaillierKeyGenerator:  </span></span><br><span class="line"><span class="meta">    @staticmethod  </span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">_get_prime_over</span>(<span class="params">N</span>):  </span><br><span class="line">        rand_func = random.SystemRandom()  </span><br><span class="line">        r = gmpy2.mpz(rand_func.getrandbits(N))  </span><br><span class="line">        r = gmpy2.bit_set(r, N - <span class="number">1</span>)  </span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">int</span>(gmpy2.next_prime(r))  </span><br><span class="line">  </span><br><span class="line"><span class="meta">    @staticmethod  </span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">_generate_p_q</span>(<span class="params">key_size</span>):  </span><br><span class="line">        p = q = <span class="literal">None</span>  </span><br><span class="line">        n_len = <span class="number">0</span>  </span><br><span class="line">        <span class="keyword">while</span> n_len != key_size:  </span><br><span class="line">            p = PaillierKeyGenerator._get_prime_over(key_size // <span class="number">2</span>)  </span><br><span class="line">            q = p  </span><br><span class="line">            <span class="keyword">while</span> q == p:  </span><br><span class="line">                q = PaillierKeyGenerator._get_prime_over(key_size // <span class="number">2</span>)  </span><br><span class="line">            n = p * q  </span><br><span class="line">            n_len = n.bit_length()  </span><br><span class="line">        <span class="keyword">return</span> p, q  </span><br><span class="line">  </span><br><span class="line"><span class="meta">    @staticmethod  </span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">generate_keypair</span>(<span class="params">key_size</span>):  </span><br><span class="line">        p, q = PaillierKeyGenerator._generate_p_q(key_size)  </span><br><span class="line">        n = p * q  </span><br><span class="line">        lam = gmpy2.lcm(p - <span class="number">1</span>, q - <span class="number">1</span>)  </span><br><span class="line">  </span><br><span class="line">        n_square = <span class="built_in">pow</span>(n, <span class="number">2</span>)  </span><br><span class="line">        g = n + random.randint(n, n_square - <span class="number">1</span>)  </span><br><span class="line">        fn_L = <span class="keyword">lambda</span> x, n: (x - <span class="number">1</span>) // n  </span><br><span class="line">        mu = gmpy2.invert(fn_L(gmpy2.powmod(g, lam, n_square), n), n)  </span><br><span class="line">        <span class="keyword">while</span> gmpy2.gcd(g, n_square) != <span class="number">1</span>:  </span><br><span class="line">            g = n + random.randint(n, n_square - <span class="number">1</span>)  </span><br><span class="line">        PublicKey = namedtuple(<span class="string">"PublicKey"</span>, <span class="string">"n g"</span>)  </span><br><span class="line">        PrivateKey = namedtuple(<span class="string">"PrivateKey"</span>, <span class="string">"public_key lam mu"</span>)  </span><br><span class="line">        public_key = PublicKey(n=n, g=g)  </span><br><span class="line">        private_key = PrivateKey(public_key=public_key, lam=lam, mu=mu)  </span><br><span class="line">        <span class="keyword">return</span> public_key, private_key  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># ======================= Paillier 加解密 =======================class Paillier:  </span></span><br><span class="line">    CIPHER_MODE_ENCRYPT = <span class="number">0</span>  </span><br><span class="line">    CIPHER_MODE_DECRYPT = <span class="number">1</span>  </span><br><span class="line">    cipher = <span class="literal">None</span>  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, cipher_mode, cipher_key</span>):  </span><br><span class="line">        <span class="keyword">if</span> cipher_mode == Paillier.CIPHER_MODE_ENCRYPT:  </span><br><span class="line">            self.public_key = cipher_key  </span><br><span class="line">            self.private_key = <span class="literal">None</span>  </span><br><span class="line">        <span class="keyword">elif</span> cipher_mode == Paillier.CIPHER_MODE_DECRYPT:  </span><br><span class="line">            self.public_key = cipher_key.public_key  </span><br><span class="line">            self.private_key = cipher_key  </span><br><span class="line">        <span class="keyword">else</span>:  </span><br><span class="line">            <span class="keyword">raise</span> ValueError(<span class="string">'cipher_mode value must be either CIPHER_MODE_ENCRYPT or CIPHER_MODE_DECRYPT'</span>)  </span><br><span class="line">        self.cipher_mode = cipher_mode  </span><br><span class="line">        self.n_square = <span class="built_in">pow</span>(self.public_key.n, <span class="number">2</span>)  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">fn_L</span>(<span class="params">self, x</span>):  </span><br><span class="line">        <span class="keyword">return</span> (x - <span class="number">1</span>) // self.public_key.n  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">encrypt</span>(<span class="params">self, m</span>):  </span><br><span class="line">        r = random.randint(<span class="number">1</span>, self.public_key.n - <span class="number">1</span>)  </span><br><span class="line">        cipher_text = gmpy2.mod(  </span><br><span class="line">            gmpy2.powmod(self.public_key.g, m, self.n_square) * gmpy2.powmod(r, self.public_key.n, self.n_square),  </span><br><span class="line">            self.n_square)  </span><br><span class="line">        cipher_text = CryptoNumber(cipher_text, self.n_square)  </span><br><span class="line">        <span class="keyword">return</span> cipher_text  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">decrypt</span>(<span class="params">self, crypto_number</span>):  </span><br><span class="line">        numerator = self.fn_L(gmpy2.powmod(crypto_number.cipher_text, self.private_key.lam, self.n_square))  </span><br><span class="line">        numerator = gmpy2.mod(numerator * self.private_key.mu, self.public_key.n)  </span><br><span class="line">        <span class="keyword">return</span> numerator  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__str__</span>(<span class="params">self</span>):  </span><br><span class="line">        <span class="keyword">return</span> Paillier.cipher  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># ======================= 同态运算 =======================class CryptoNumber:  </span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, cipher_text, n_square</span>):  </span><br><span class="line">        self.cipher_text = cipher_text  </span><br><span class="line">        self.n_square = n_square  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__add__</span>(<span class="params">self, other</span>):  </span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">isinstance</span>(other, CryptoNumber):  </span><br><span class="line">            sum_ciphertext = gmpy2.mod(self.cipher_text * other.cipher_text, self.n_square)  </span><br><span class="line">            <span class="keyword">return</span> CryptoNumber(sum_ciphertext, self.n_square)  </span><br><span class="line">        <span class="keyword">else</span>:  </span><br><span class="line">            <span class="keyword">raise</span> TypeError(<span class="string">'Unsupported operand type(s) for +: "CryptoNumber" and "{}"'</span>.<span class="built_in">format</span>(<span class="built_in">type</span>(other)))  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__mul__</span>(<span class="params">self, other</span>):  </span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">isinstance</span>(other, CryptoNumber):  </span><br><span class="line">            <span class="keyword">raise</span> NotImplementedError(<span class="string">'Multiplication between two "CryptoNumber" instances is not supported'</span>)  </span><br><span class="line">        <span class="keyword">else</span>:  </span><br><span class="line">            mul_cipher_text = gmpy2.mod(<span class="built_in">pow</span>(self.cipher_text, other), self.n_square)  </span><br><span class="line">            <span class="keyword">return</span> CryptoNumber(mul_cipher_text, self.n_square)  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># ======================= 优化后的 Paillier 加法同态加解密 =======================def paillier_encryption_batch(values, public_key):  </span></span><br><span class="line">    paillier = Paillier(Paillier.CIPHER_MODE_ENCRYPT, public_key)  </span><br><span class="line">    <span class="comment"># 批量加密数据  </span></span><br><span class="line">    encrypted_values = [paillier.encrypt(value) <span class="keyword">for</span> value <span class="keyword">in</span> values]  </span><br><span class="line">    <span class="keyword">return</span> encrypted_values  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">paillier_homomorphic_addition</span>(<span class="params">encrypted_values</span>):  </span><br><span class="line">    encrypted_sum = encrypted_values[<span class="number">0</span>]  </span><br><span class="line">    <span class="keyword">for</span> enc_value <span class="keyword">in</span> encrypted_values[<span class="number">1</span>:]:  </span><br><span class="line">        encrypted_sum += enc_value  <span class="comment"># 同态加法  </span></span><br><span class="line">    <span class="keyword">return</span> encrypted_sum  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">paillier_decryption</span>(<span class="params">encrypted_value, private_key</span>):  </span><br><span class="line">    paillier = Paillier(Paillier.CIPHER_MODE_DECRYPT, private_key)  </span><br><span class="line">    <span class="comment"># 解密数据  </span></span><br><span class="line">    decrypted_value = paillier.decrypt(encrypted_value)  </span><br><span class="line">    <span class="keyword">return</span> decrypted_value  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">paillier_test</span>(<span class="params">public_key, private_key</span>):  </span><br><span class="line">    <span class="comment"># 测试数据  </span></span><br><span class="line">    values = [<span class="number">15</span>, <span class="number">20</span>]  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 计时开始  </span></span><br><span class="line">    start_time = time.time()  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 加密数据  </span></span><br><span class="line">    encrypted_values = paillier_encryption_batch(values, public_key)  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 同态加法  </span></span><br><span class="line">    encrypted_sum = paillier_homomorphic_addition(encrypted_values)  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 解密结果  </span></span><br><span class="line">    decrypted_sum = paillier_decryption(encrypted_sum, private_key)  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 计时结束  </span></span><br><span class="line">    end_time = time.time()  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 输出结果  </span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f"Paillier 加解密时间: <span class="subst">{end_time - start_time}</span> 秒"</span>)  </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f"Paillier 解密结果: <span class="subst">{decrypted_sum}</span>"</span>)  </span><br><span class="line">    <span class="keyword">return</span> end_time - start_time  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># ======================= 全同态加解密（TenSEAL - CKKS） =======================def full_homomorphic_encryption(value1, value2, context):  </span></span><br><span class="line">    <span class="comment"># 创建 CKKS 向量并加密  </span></span><br><span class="line">    encrypted_value1 = ts.ckks_vector(context, [value1])  </span><br><span class="line">    encrypted_value2 = ts.ckks_vector(context, [value2])  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 同态加法  </span></span><br><span class="line">    encrypted_sum = encrypted_value1 + encrypted_value2  </span><br><span class="line">    <span class="keyword">return</span> encrypted_sum  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">full_homomorphic_decryption</span>(<span class="params">encrypted_value, secret_key</span>):  </span><br><span class="line">    <span class="comment"># 解密数据  </span></span><br><span class="line">    decrypted_value = encrypted_value.decrypt(secret_key)  </span><br><span class="line">    <span class="keyword">return</span> decrypted_value[<span class="number">0</span>]  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">full_homomorphic_test</span>(<span class="params">context, secret_key</span>):  </span><br><span class="line">    <span class="comment"># 测试数据  </span></span><br><span class="line">    value1, value2 = <span class="number">15</span>, <span class="number">20</span>  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 计时开始  </span></span><br><span class="line">    start_time = time.time()  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 加密和同态加法  </span></span><br><span class="line">    encrypted_sum = full_homomorphic_encryption(value1, value2, context)  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 解密结果  </span></span><br><span class="line">    decrypted_sum = full_homomorphic_decryption(encrypted_sum, secret_key)  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 计时结束  </span></span><br><span class="line">    end_time = time.time()  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 输出结果  </span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f"全同态加解密时间: <span class="subst">{end_time - start_time}</span> 秒"</span>)  </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f"全同态解密结果: <span class="subst">{decrypted_sum}</span>"</span>)  </span><br><span class="line">    <span class="keyword">return</span> end_time - start_time  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># ======================= 主程序：比较 Paillier 和 TenSEAL 的性能 =======================if __name__ == "__main__":  </span></span><br><span class="line">    <span class="comment"># ===== Paillier 密钥生成（不计入时间）=====  </span></span><br><span class="line">    public_key, private_key = PaillierKeyGenerator.generate_keypair(<span class="number">1024</span>)  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 比较加法同态加解密时间（Paillier）  </span></span><br><span class="line">    paillier_time = paillier_test(public_key, private_key)  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># ===== TenSEAL 上下文和密钥生成（不计入时间）=====  </span></span><br><span class="line">    context = ts.context(ts.SCHEME_TYPE.CKKS, poly_modulus_degree=<span class="number">8192</span>, coeff_mod_bit_sizes=[<span class="number">60</span>, <span class="number">40</span>, <span class="number">60</span>])  </span><br><span class="line">    context.global_scale = <span class="number">2</span>**<span class="number">40</span>  <span class="comment"># 设置 global scale    context.generate_galois_keys()  # 生成 Galois 密钥  </span></span><br><span class="line">    secret_key = context.secret_key()  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 比较全同态加解密时间（TenSEAL）  </span></span><br><span class="line">    full_homomorphic_time = full_homomorphic_test(context, secret_key)  </span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 输出对比结果  </span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f"\n实验结果："</span>)  </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f"Paillier 加法同态加解密时间: <span class="subst">{paillier_time}</span> 秒"</span>)  </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f"全同态加解密时间 (TenSEAL): <span class="subst">{full_homomorphic_time}</span> 秒"</span>)</span><br></pre></td></tr></tbody></table></figure></div>
+<p>![[./Pasted image 20241116144236.png|Pasted image 20241116144236]]</p>
+<ul>
+<li>分析<ul>
+<li>加解密时间<ul>
+<li>在不计入密钥生成时间的情况下，<strong>Paillier 加解密的时间显著小于全同态加密（TenSEAL）的加解密时间</strong>。</li>
+</ul>
+</li>
+<li>解密结果<ul>
+<li>加法同态解密结果是精确的，而全同态的解密结果与预期结果存在微小误差</li>
+<li>原因：TenSEAL 使用的 <strong>CKKS</strong> 同态加密方案是一种近似计算的算法，主要用于处理浮点数和机器学习中的计算。由于CKKS的设计特点，<strong>同态运算过程中会引入少量的误差</strong>，尤其是在进行乘法和复杂运算时。这就是为什么解密结果不是精确的 <code>35</code>，而是一个非常接近 <code>35</code> 的浮点数。</li>
+<li>如果需要在 TenSEAL 中得到更精确的结果，可以尝试调整加密参数，例如增大 <code>global_scale</code>，但这可能会增加计算时间和内存开销。</li>
+</ul>
+</li>
+<li>根据应用需求选择合适的加密方案。Paillier 适用于需要精确计算的场景，CKKS 更适合处理浮点数和需要大量同态运算的机器学习任务。</li>
+</ul>
+</li>
+</ul>
+<p> <strong>增加同态运算的复杂度</strong><br>在 TenSEAL 中，增加更多的同态运算（如同态乘法、平方）可以延长加解密时间。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">full_homomorphic_encryption</span>(<span class="params">value1, value2, context</span>):</span><br><span class="line">    <span class="comment"># 创建 CKKS 向量并加密</span></span><br><span class="line">    encrypted_value1 = ts.ckks_vector(context, [value1])</span><br><span class="line">    encrypted_value2 = ts.ckks_vector(context, [value2])</span><br><span class="line">    <span class="comment"># 同态加法</span></span><br><span class="line">    encrypted_sum = encrypted_value1 + encrypted_value2</span><br><span class="line">    <span class="comment"># 增加同态乘法</span></span><br><span class="line">    encrypted_product = encrypted_sum * encrypted_value1</span><br><span class="line">    <span class="comment"># 增加同态平方</span></span><br><span class="line">    encrypted_result = encrypted_product.square()</span><br><span class="line">    <span class="keyword">return</span> encrypted_result</span><br></pre></td></tr></tbody></table></figure></div>
+
+<p>![[./Pasted image 20241117154800.png|Pasted image 20241117154800]]</p>
+<hr>
+<h4 id="2-2-密文大小的比较"><a href="#2-2-密文大小的比较" class="headerlink" title="2.2 密文大小的比较"></a>2.2 密文大小的比较</h4><h5 id="Paillier（加法同态加密）"><a href="#Paillier（加法同态加密）" class="headerlink" title="Paillier（加法同态加密）"></a><strong>Paillier（加法同态加密）</strong></h5><p>Paillier 加密方案是一种加法同态加密方案，支持加法操作的同态运算。其密文的大小主要由模数 nnn 和 n2n^2n2 的位长度决定。</p>
+<ul>
+<li><strong>密钥生成</strong>：Paillier 的密钥生成依赖于两个大素数 p 和 q，计算出模数 $n = p \times q和 n^2$，其密文的大小大约为$2 \times \text{bit length of } n$，即大约是 $2 \times \text{key size in bits}$。</li>
+<li><strong>密文大小</strong>：通常，Paillier 密文的大小为 2048 位或 4096 位，具体取决于密钥大小。对于 1024 位的密钥，密文的大小大约为 2048 位。<br>  <strong>计算公式</strong>：$$<br>  \text{密文大小} \approx 2 \times (\text{key size in bits})$$<br>  如果使用 2048 位的密钥，密文的大小大约是 4096 位。</li>
+</ul>
+<h5 id="全同态加密（如-BFV-和-CKKS）"><a href="#全同态加密（如-BFV-和-CKKS）" class="headerlink" title="全同态加密（如 BFV 和 CKKS）"></a><strong>全同态加密（如 BFV 和 CKKS）</strong></h5><h2 id="全同态加密（FHE）允许对密文进行任意数量的同态运算（包括加法、乘法等）。典型的全同态加密方案如-BFV-和-CKKS，它们的密文大小通常更大，因为它们支持更复杂的操作，并且涉及更多的加密参数。-BFV-加密方案-多项式表示：BFV-使用多项式环进行加密，密文包含多项式的系数。每个系数的大小通常是由系数模数决定的。-密文大小：BFV-密文的大小由以下几个参数决定：-1-多项式度数：多项式度数-N-决定了密文中的多项式的长度。-2-系数模数：系数模数的位数决定了每个系数所需的位数。-对于-BFV，假设多项式度数为-N，每个系数的模数大小为B，则密文的大小大致为：-text-密文大小-approx-N-times-text-位数-text-系数模数-比如，选择-N-x3D-8192，每个系数模数为-60-位，则密文大小大约是-8192-times-60-位，即约-491-520-位。-CKKS-加密方案-多项式表示：CKKS-是一种专门针对近似同态加密设计的加密方案，支持浮点数的加密。与-BFV-类似，CKKS-使用多项式表示，但它在加密时采用了近似技术。-密文大小：与-BFV-类似，CKKS-的密文大小也由多项式度数和系数模数大小决定。-对于-CKKS，假设多项式度数为-NNN，系数模数大小为-BBB，则密文的大小大致为：-text-密文大小-approx-N-times-text-位数-text-系数模数-如果选择-N-x3D-8192，每个系数模数为-60-位，则密文大小大约是-8192-times-60-位，即约-491-520-位。"><a href="#全同态加密（FHE）允许对密文进行任意数量的同态运算（包括加法、乘法等）。典型的全同态加密方案如-BFV-和-CKKS，它们的密文大小通常更大，因为它们支持更复杂的操作，并且涉及更多的加密参数。-BFV-加密方案-多项式表示：BFV-使用多项式环进行加密，密文包含多项式的系数。每个系数的大小通常是由系数模数决定的。-密文大小：BFV-密文的大小由以下几个参数决定：-1-多项式度数：多项式度数-N-决定了密文中的多项式的长度。-2-系数模数：系数模数的位数决定了每个系数所需的位数。-对于-BFV，假设多项式度数为-N，每个系数的模数大小为B，则密文的大小大致为：-text-密文大小-approx-N-times-text-位数-text-系数模数-比如，选择-N-x3D-8192，每个系数模数为-60-位，则密文大小大约是-8192-times-60-位，即约-491-520-位。-CKKS-加密方案-多项式表示：CKKS-是一种专门针对近似同态加密设计的加密方案，支持浮点数的加密。与-BFV-类似，CKKS-使用多项式表示，但它在加密时采用了近似技术。-密文大小：与-BFV-类似，CKKS-的密文大小也由多项式度数和系数模数大小决定。-对于-CKKS，假设多项式度数为-NNN，系数模数大小为-BBB，则密文的大小大致为：-text-密文大小-approx-N-times-text-位数-text-系数模数-如果选择-N-x3D-8192，每个系数模数为-60-位，则密文大小大约是-8192-times-60-位，即约-491-520-位。" class="headerlink" title="全同态加密（FHE）允许对密文进行任意数量的同态运算（包括加法、乘法等）。典型的全同态加密方案如 BFV 和 CKKS，它们的密文大小通常更大，因为它们支持更复杂的操作，并且涉及更多的加密参数。###### BFV 加密方案- 多项式表示：BFV 使用多项式环进行加密，密文包含多项式的系数。每个系数的大小通常是由系数模数决定的。- 密文大小：BFV 密文的大小由以下几个参数决定：    1. 多项式度数：多项式度数 N 决定了密文中的多项式的长度。    2. 系数模数：系数模数的位数决定了每个系数所需的位数。    对于 BFV，假设多项式度数为 N，每个系数的模数大小为B，则密文的大小大致为：    $$\text{密文大小} \approx N \times \text{位数}(\text{系数模数})$$    比如，选择 N = 8192，每个系数模数为 60 位，则密文大小大约是 $8192 \times 60$位，即约 491,520 位。###### CKKS 加密方案- 多项式表示：CKKS 是一种专门针对近似同态加密设计的加密方案，支持浮点数的加密。与 BFV 类似，CKKS 使用多项式表示，但它在加密时采用了近似技术。- 密文大小：与 BFV 类似，CKKS 的密文大小也由多项式度数和系数模数大小决定。    对于 CKKS，假设多项式度数为 NNN，系数模数大小为 BBB，则密文的大小大致为：$$\text{密文大小} \approx N \times \text{位数}(\text{系数模数})$$    如果选择 N = 8192，每个系数模数为 60 位，则密文大小大约是 8192 \times 60 位，即约 491,520 位。
+    "></a>全同态加密（FHE）允许对密文进行任意数量的同态运算（包括加法、乘法等）。典型的全同态加密方案如 BFV 和 CKKS，它们的密文大小通常更大，因为它们支持更复杂的操作，并且涉及更多的加密参数。<br>###### <strong>BFV 加密方案</strong><br>- <strong>多项式表示</strong>：BFV 使用多项式环进行加密，密文包含多项式的系数。每个系数的大小通常是由系数模数决定的。<br>- <strong>密文大小</strong>：BFV 密文的大小由以下几个参数决定：<br>    1. <strong>多项式度数</strong>：多项式度数 N 决定了密文中的多项式的长度。<br>    2. <strong>系数模数</strong>：系数模数的位数决定了每个系数所需的位数。<br>    对于 BFV，假设多项式度数为 N，每个系数的模数大小为B，则密文的大小大致为：<br>    $$\text{密文大小} \approx N \times \text{位数}(\text{系数模数})$$<br><br>    比如，选择 N = 8192，每个系数模数为 60 位，则密文大小大约是 $8192 \times 60$位，即约 491,520 位。<br>###### <strong>CKKS 加密方案</strong><br>- <strong>多项式表示</strong>：CKKS 是一种专门针对近似同态加密设计的加密方案，支持浮点数的加密。与 BFV 类似，CKKS 使用多项式表示，但它在加密时采用了近似技术。<br><br>- <strong>密文大小</strong>：与 BFV 类似，CKKS 的密文大小也由多项式度数和系数模数大小决定。<br><br>    对于 CKKS，假设多项式度数为 NNN，系数模数大小为 BBB，则密文的大小大致为：$$\text{密文大小} \approx N \times \text{位数}(\text{系数模数})$$<br>    如果选择 N = 8192，每个系数模数为 60 位，则密文大小大约是 8192 \times 60 位，即约 491,520 位。
+    </h2><table>
+<thead>
+<tr>
+<th>加密方案</th>
+<th>密文大小（密钥大小 1024 位）</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Paillier</strong></td>
+<td>2048 位（密钥大小 1024 位）</td>
+<td>仅支持加法同态，适合简单的加法运算</td>
+</tr>
+<tr>
+<td><strong>BFV</strong></td>
+<td>491,520 位（8192 多项式度数，60 位系数模数）</td>
+<td>支持加法和乘法同态，计算复杂度较高</td>
+</tr>
+<tr>
+<td><strong>CKKS</strong></td>
+<td>491,520 位（8192 多项式度数，60 位系数模数）</td>
+<td>支持加法和乘法同态，适用于近似同态计算</td>
+</tr>
+</tbody></table>
+<h5 id="结论："><a href="#结论：" class="headerlink" title="结论："></a>结论：</h5><ul>
+<li><strong>Paillier</strong>：适用于加法同态，密文相对较小，通常为 2048 位或 4096 位，适合处理加法操作，但不支持乘法。</li>
+<li><strong>BFV/CKKS</strong>：作为全同态加密方案，密文大小显著更大，通常在几百千位，适合执行更复杂的加法和乘法同态操作。</li>
+</ul>
+<h5 id="密文大小的影响："><a href="#密文大小的影响：" class="headerlink" title="密文大小的影响："></a>密文大小的影响：</h5><ul>
+<li><strong>Paillier</strong>：因为仅支持加法同态，因此密文较小，适用于隐私保护需要较少计算量的场景。</li>
+<li><strong>全同态加密（如 BFV、CKKS）</strong>：虽然密文更大，但它们可以执行更加复杂的同态操作（加法、乘法等），适用于需要进行复杂计算（如加密计算、隐私保护机器学习）的场景。</li>
+</ul>
+<hr>
+<h4 id="2-3-适用场景"><a href="#2-3-适用场景" class="headerlink" title="2.3 适用场景"></a>2.3 适用场景</h4><h6 id="1-加法同态加密（Additive-Homomorphic-Encryption）"><a href="#1-加法同态加密（Additive-Homomorphic-Encryption）" class="headerlink" title="1. 加法同态加密（Additive Homomorphic Encryption）"></a>1. <strong>加法同态加密（Additive Homomorphic Encryption）</strong></h6><p><strong>适用场景：</strong></p>
+<ul>
+<li><strong>加密数据的求和与计数</strong>：<ul>
+<li><strong>金融分析</strong>：在多个加密的交易数据（如账户余额、支付记录）上进行加法运算，得到加密的总额或总计数。例如，多个公司或个人可以将自己的财务数据加密后提交，进行合并、汇总或统计，而不会暴露具体的财务数据。</li>
+<li><strong>电子投票</strong>：电子投票系统可以使用加法同态加密技术来实现加密的投票统计，确保每个投票人的隐私，同时能够对投票结果进行合并和统计。</li>
+<li><strong>统计分析</strong>：进行数据汇总、加权求和等操作时，适合使用加法同态加密。例如，政府、银行等机构进行加密数据的统计分析，能够保持数据的隐私。</li>
+<li><strong>医疗健康数据分析</strong>：多个医院或医疗机构可以使用加法同态加密分析不同患者的健康数据，进行加密汇总分析，而不会泄露患者的个人隐私。</li>
+</ul>
+</li>
+<li><strong>简单的加法运算</strong>：<ul>
+<li>加法同态加密适用于需要对加密数据进行简单的加法操作的场景。例如，在多个加密数据的加总或加权求和中非常高效。<br> <strong>优势：</strong></li>
+</ul>
+</li>
+<li><strong>计算效率较高</strong>：相对于全同态加密，加法同态加密的计算复杂度较低，尤其在进行简单的加法运算时，性能较好。</li>
+<li><strong>广泛应用于统计和汇总场景</strong>：适用于各种涉及合并、加总、计数等简单加法运算的任务。<br> <strong>局限性：</strong></li>
+<li><strong>功能有限</strong>：仅支持加法操作，无法执行乘法、比较等其他复杂运算。因此，若任务涉及复杂的运算，无法仅通过加法同态加密完成。</li>
+</ul>
+<h6 id="2-全同态加密（Fully-Homomorphic-Encryption-FHE）"><a href="#2-全同态加密（Fully-Homomorphic-Encryption-FHE）" class="headerlink" title="2. 全同态加密（Fully Homomorphic Encryption, FHE）"></a>2. <strong>全同态加密（Fully Homomorphic Encryption, FHE）</strong></h6><p> <strong>适用场景：</strong></p>
+<ul>
+<li><strong>复杂的加法和乘法运算</strong>：<ul>
+<li><strong>安全计算与联合学习</strong>：在多个参与方之间进行联合机器学习、数据分析等任务时，每个参与方的数据需要保持私密。全同态加密可以支持对加密数据进行复杂的运算（加法、乘法、矩阵运算等），从而实现数据共享与隐私保护的平衡。</li>
+<li><strong>加密数据库查询</strong>：全同态加密可用于对加密数据进行复杂查询，例如加密的数据库中进行加法、乘法、聚合等操作，返回加密的查询结果。这对于加密数据库的隐私保护和合规性要求至关重要。</li>
+<li><strong>安全多方计算</strong>：例如，在去中心化的金融（DeFi）系统中，多个独立的参与方可以用全同态加密协议执行计算（如资产计算、风险评估等），保证数据隐私的同时完成复杂的计算任务。</li>
+<li><strong>生物信息学与基因数据分析</strong>：全同态加密可以保护基因数据的隐私，在加密的基因组数据上进行计算，如基因比对、遗传算法等，避免敏感数据泄漏。</li>
+</ul>
+</li>
+<li><strong>隐私保护的机器学习与人工智能</strong>：<ul>
+<li>全同态加密使得机器学习和AI算法能够在加密数据上直接执行，不必解密数据。例如，使用加密数据训练模型或在加密数据上做推理，保证数据隐私同时进行智能分析。</li>
+</ul>
+</li>
+<li><strong>加密数据的复杂处理</strong>：<ul>
+<li><strong>智能合约</strong>：在区块链智能合约中，全同态加密可以使得合约能够在加密状态下处理更复杂的逻辑，例如加密的数据计算、验证等任务。<br><strong>优势：</strong></li>
+</ul>
+</li>
+<li><strong>支持复杂运算</strong>：全同态加密不仅支持加法，还支持乘法及其他更复杂的运算，非常适合涉及复杂数据处理的场景。</li>
+<li><strong>强隐私保护</strong>：可以在完全不暴露数据的情况下执行复杂计算，保障数据的隐私性。<br> <strong>局限性：</strong></li>
+<li><strong>计算开销较大</strong>：全同态加密的计算和加密密文的大小相对较大，因此效率较低，不适合处理非常大规模的数据或实时性要求较高的任务。</li>
+<li><strong>实现复杂</strong>：全同态加密的实现较为复杂，通常需要专门的硬件或优化的计算环境来提升性能。</li>
+</ul>
+<hr>
+<h3 id="2-4-加法同态加密-vs-全同态加密：对比总结"><a href="#2-4-加法同态加密-vs-全同态加密：对比总结" class="headerlink" title="2.4 加法同态加密 vs 全同态加密：对比总结"></a>2.4 <strong>加法同态加密 vs 全同态加密：对比总结</strong></h3><table>
+<thead>
+<tr>
+<th>特性</th>
+<th>加法同态加密</th>
+<th>全同态加密</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>支持运算类型</strong></td>
+<td>仅支持加法操作</td>
+<td>支持加法、乘法等任意运算</td>
+</tr>
+<tr>
+<td><strong>计算复杂度</strong></td>
+<td>较低，运算效率较高</td>
+<td>较高，运算效率低</td>
+</tr>
+<tr>
+<td><strong>适用场景</strong></td>
+<td>数据汇总、统计、加权求和、计数等简单加法运算</td>
+<td>安全计算、机器学习、复杂查询、加密数据库等复杂运算</td>
+</tr>
+<tr>
+<td><strong>隐私保护</strong></td>
+<td>保证数据隐私，但只限于加法计算</td>
+<td>更强的隐私保护，支持复杂的加密数据处理</td>
+</tr>
+<tr>
+<td><strong>密文大小</strong></td>
+<td>相对较小</td>
+<td>相对较大</td>
+</tr>
+<tr>
+<td><strong>计算能力</strong></td>
+<td>高效且适合简单任务</td>
+<td>适合复杂任务，但开销较大</td>
+</tr>
+<tr>
+<td><strong>技术复杂度</strong></td>
+<td>实现较简单</td>
+<td>实现复杂，通常需要特殊优化</td>
+</tr>
+</tbody></table>
+<h2 id="3-基于安全等级的密钥长度选取方法"><a href="#3-基于安全等级的密钥长度选取方法" class="headerlink" title="3.基于安全等级的密钥长度选取方法"></a>3.基于安全等级的密钥长度选取方法</h2><h3 id="3-1-Paillier加密的密钥长度选取"><a href="#3-1-Paillier加密的密钥长度选取" class="headerlink" title="3.1 Paillier加密的密钥长度选取"></a>3.1 <strong>Paillier加密的密钥长度选取</strong></h3><p>Paillier 加密是一种加法同态加密方案，其安全性通常基于大数分解的困难性（特别是整数分解问题）。</p>
+<h4 id="Paillier加密的安全性分析"><a href="#Paillier加密的安全性分析" class="headerlink" title="Paillier加密的安全性分析"></a><strong>Paillier加密的安全性分析</strong></h4><ul>
+<li>Paillier 加密的安全性主要依赖于生成的两个大素数的保密性。</li>
+<li>密钥长度的选择通常基于目标的安全等级（例如 128 位、192 位或 256 位的安全性）。</li>
+</ul>
+<h4 id="密钥长度的选取方法"><a href="#密钥长度的选取方法" class="headerlink" title="密钥长度的选取方法"></a><strong>密钥长度的选取方法</strong></h4><p>Paillier加密的密钥长度通常是通过两个 <strong>素数</strong>（<code>p</code> 和 <code>q</code>）的位数来确定的。密钥的大小大致等于两个素数的乘积 <code>n = p * q</code> 的位数<br><strong>128位安全性：</strong><br>对于 <strong>128位安全性</strong>，选择 <strong>1024位</strong>的密钥长度是常见的做法。这意味着选择两个 <strong>512位</strong>的大素数 <code>p</code> 和 <code>q</code> 来生成密钥。这个长度适合一般的商业应用，如在线支付、数据加密等。<br><strong>192位安全性：</strong><br>如果你需要更高的安全性，可以选择 <strong>1536位</strong>的密钥长度，意味着每个素数的位数大约是 <strong>768位</strong>。这个长度适用于对安全性要求更高的场合，如金融交易、机密数据处理等。<br><strong>256位安全性：</strong><br>对于 <strong>256位安全性</strong>，可以选择 <strong>2048位</strong>的密钥长度，即每个素数的位数是 <strong>1024位</strong>。这个长度适用于高安全需求的环境，如国家安全、军事数据保护等。</p>
+<h3 id="3-2-全同态加密（FHE）基于BFV、CKKS的密钥长度选取"><a href="#3-2-全同态加密（FHE）基于BFV、CKKS的密钥长度选取" class="headerlink" title="3.2 全同态加密（FHE）基于BFV、CKKS的密钥长度选取"></a>3.2 <strong>全同态加密（FHE）基于BFV、CKKS的密钥长度选取</strong></h3><p>全同态加密（FHE）方案，如 <strong>BFV</strong>（Brakerski/Fan-Vikuntanathan）和 <strong>CKKS</strong>（Cheon-Kim-Kim-Song），它们的安全性依赖于“学习与误差”（LWE）假设或其他数学难题。FHE方案的安全性通常通过密钥和参数的大小来保证。</p>
+<h4 id="密钥长度选择的影响因素"><a href="#密钥长度选择的影响因素" class="headerlink" title="密钥长度选择的影响因素"></a><strong>密钥长度选择的影响因素</strong></h4><ul>
+<li><strong>多项式度数（Poly Modulus Degree）</strong>：<ul>
+<li>多项式度数通常以2的幂次方表示。常见的度数有 1024, 2048, 4096, 8192 等</li>
+<li>这决定了密文的大小，度数越大，密文越大，计算能力要求越高。通常，选择更高的度数以提高安全性，但也会带来更高的计算成本。</li>
+<li>多项式度数也与同态操作的效率相关。多项式度数越大，支持的同态操作（如加法、乘法等）就越多，但计算复杂度和存储需求也会增加。</li>
+<li>决定了多项式的长度，即参与计算的系数的数量。</li>
+</ul>
+</li>
+<li><strong>系数模数（Coeff Mod Bit Sizes）</strong>：<ul>
+<li>常见的位数有 60 位、40 位、20 位等</li>
+<li>这是指每个加密数的大小，位数越高，表示每个数可以存储更大的值，因此也提高了安全性。</li>
+<li>系数模数影响加密过程中数值的“噪声”水平。噪声过大可能会导致解密错误，因此系数模数的选择必须平衡安全性和噪声管理。</li>
+<li>决定了每个多项式系数的大小和范围，通常需要大于多项式的大小。</li>
+</ul>
+</li>
+</ul>
+<h4 id="BFV加密的密钥长度选取"><a href="#BFV加密的密钥长度选取" class="headerlink" title="BFV加密的密钥长度选取"></a><strong>BFV加密的密钥长度选取</strong></h4><p>BFV 加密方案广泛应用于加密计算和同态运算。BFV 的安全性依赖于 <strong>大整数的分解问题</strong> 和 <strong>噪声的积累</strong>。</p>
+<ul>
+<li><strong>加密安全性</strong>：选择 BFV 时，密钥大小和多项式的度数决定了安全性等级。</li>
+<li><strong>密钥长度与安全等级</strong>：<ul>
+<li><strong>128 位安全性</strong>：推荐使用 2048 位或 3072 位的公钥和密钥长度。</li>
+<li><strong>192 位安全性</strong>：通常选择 4096 位或更长的密钥。</li>
+<li><strong>256 位安全性</strong>：使用更长的密钥（如 8192 位及以上）。</li>
+</ul>
+</li>
+</ul>
+<h4 id="CKKS加密的密钥长度选取"><a href="#CKKS加密的密钥长度选取" class="headerlink" title="CKKS加密的密钥长度选取"></a><strong>CKKS加密的密钥长度选取</strong></h4><p>CKKS 是针对<strong>近似同态加密</strong>（Approximate Homomorphic Encryption, AHE）的一种方案，特别适用于连续数据如浮点数加密。它基于 <strong>LWE</strong>（学习带误差）假设。</p>
+<ul>
+<li><strong>加密安全性</strong>：CKKS 加密的安全性同样依赖于多项式的度数和系数模数。CKKS 的密钥选择通常与 <strong>poly_modulus_degree</strong>（多项式度数）和 <strong>coeff_mod_bit_sizes</strong>（系数模数）相关。</li>
+<li><strong>常见的参数选择</strong>：<ul>
+<li><strong>128 位安全性</strong>：常见的选择是 <strong>poly_modulus_degree = 8192</strong> 和 **coeff_mod_bit_sizes = [60, 40, 60]**。</li>
+<li><strong>192 位安全性</strong>：通常选择更大的多项式度数，如 <strong>poly_modulus_degree = 16384</strong> 和 **coeff_mod_bit_sizes = [60, 40, 60]**。</li>
+<li><strong>256 位安全性</strong>：可能选择 <strong>poly_modulus_degree = 32768</strong> 和 **coeff_mod_bit_sizes = [60, 40, 60]**。</li>
+</ul>
+</li>
+</ul>
+<p>下面是一个基于安全等级选择密钥长度的推荐方法：</p>
+<table>
+<thead>
+<tr>
+<th>安全等级</th>
+<th>多项式度数（poly_modulus_degree）</th>
+<th>系数模数（coeff_mod_bit_sizes）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>128位安全性</strong></td>
+<td>8192</td>
+<td>[60, 40, 60]</td>
+</tr>
+<tr>
+<td><strong>192位安全性</strong></td>
+<td>16384</td>
+<td>[60, 50, 60]</td>
+</tr>
+<tr>
+<td><strong>256位安全性</strong></td>
+<td>16384</td>
+<td>[80, 60, 80]</td>
+</tr>
+</tbody></table>
+<h2 id="4-经典问题的编程实现"><a href="#4-经典问题的编程实现" class="headerlink" title="4. 经典问题的编程实现"></a>4. 经典问题的编程实现</h2><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> tenseal <span class="keyword">as</span> ts</span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 初始化 TenSEAL 上下文</span></span><br><span class="line">context = ts.context(ts.SCHEME_TYPE.CKKS, poly_modulus_degree=<span class="number">8192</span>, coeff_mod_bit_sizes=[<span class="number">60</span>, <span class="number">40</span>, <span class="number">60</span>])</span><br><span class="line">context.generate_galois_keys()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 设置 global_scale</span></span><br><span class="line">context.global_scale = <span class="number">2</span>**<span class="number">60</span>  <span class="comment"># 设置较大的 global scale，通常为 2 的较大次幂</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 模拟一些工资数据</span></span><br><span class="line"><span class="comment"># 假设有5个员工的工资</span></span><br><span class="line">salaries = [<span class="number">5000</span>, <span class="number">5500</span>, <span class="number">6000</span>, <span class="number">6500</span>, <span class="number">7000</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 对工资数据进行加密</span></span><br><span class="line"><span class="comment"># 使用 TenSEAL 的 ckks_vector 进行加密</span></span><br><span class="line">encrypted_salaries = [ts.ckks_vector(context, [salary]) <span class="keyword">for</span> salary <span class="keyword">in</span> salaries]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. 计算加密工资的总和（同态加法）</span></span><br><span class="line">encrypted_sum = encrypted_salaries[<span class="number">0</span>]</span><br><span class="line"><span class="keyword">for</span> encrypted_salary <span class="keyword">in</span> encrypted_salaries[<span class="number">1</span>:]:</span><br><span class="line">    encrypted_sum = encrypted_sum + encrypted_salary</span><br><span class="line"></span><br><span class="line"><span class="comment"># 6. 计算总和的平均工资（解密得到结果）</span></span><br><span class="line"><span class="comment"># 计算总和之后除以工资数量</span></span><br><span class="line">decrypted_sum = encrypted_sum.decrypt()</span><br><span class="line">decrypted_average = decrypted_sum[<span class="number">0</span>] / <span class="built_in">len</span>(salaries)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 7. 输出结果</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f"Encrypted total sum of salaries: <span class="subst">{decrypted_sum[<span class="number">0</span>]}</span>"</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f"Encrypted average salary: <span class="subst">{decrypted_average}</span>"</span>)</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure></div>
+
+<p>![[./Pasted image 20241117212240.png|Pasted image 20241117212240]]</p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>笔记迁移到博客的图片问题最终解决方案</title>
+    <url>/2025/03/dfeeaecfbe86.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>哈哈哈<img lazyload="" src="/images/loading.svg" data-src="/../images/Pasted%20image%2020250308200727.png"><br>分两种情况：</p>
+<ol>
+<li>在学习仓库里编辑的文章，通过ob的envelope插件传到github，然后pull后执行脚本，脚本实现移动图片加修改.md中图片内链<ul>
+<li>在学习仓库里还是<code>![[]]</code>格式,且选择内部链接类型为“尽可能简短模式”，<img lazyload="" src="/images/loading.svg" data-src="/../images/Pasted%20image%2020250308210735.png">这个要关掉</li>
+</ul>
+</li>
+</ol>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tbody><tr><td class="code"><pre><span class="line">	<span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> urllib.parse</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">move_images_and_update_links</span>(<span class="params">posts_dir, images_dir</span>):</span><br><span class="line"></span><br><span class="line"><span class="comment"># 遍历_posts文件夹中的所有.md文件</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> os.walk(posts_dir):</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> files:</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> file.endswith(<span class="string">'.md'</span>):</span><br><span class="line"></span><br><span class="line">md_file_path = os.path.join(root, file)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f"正在处理文件: <span class="subst">{md_file_path}</span>"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查文件权限，确保它可写</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> os.access(md_file_path, os.W_OK):</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f"没有写权限: <span class="subst">{md_file_path}</span>"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开.md文件并读取内容</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(md_file_path, <span class="string">'r'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line"></span><br><span class="line">content = f.read()</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 查找.md文件中所有的图片链接，处理 ![[...|...]] 格式</span></span><br><span class="line"></span><br><span class="line">new_content = content</span><br><span class="line"></span><br><span class="line">image_links = re.findall(<span class="string">r'!\[\[(.*?)\|.*?\]\]'</span>, content)</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> image_links:</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f"未找到图片链接: <span class="subst">{md_file_path}</span>"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> image_link <span class="keyword">in</span> image_links:</span><br><span class="line"></span><br><span class="line"><span class="comment"># 规范化路径，去掉 './' 部分</span></span><br><span class="line"></span><br><span class="line">image_link = os.path.normpath(image_link) <span class="comment"># 去掉 './' 等无效部分</span></span><br><span class="line"></span><br><span class="line">image_name = os.path.basename(image_link)</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算图片的源路径</span></span><br><span class="line"></span><br><span class="line">source_image_path = os.path.join(root, image_name)</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果图片链接是相对路径，尝试拼接完整路径</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(source_image_path):</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果图片在子目录中，尝试调整路径</span></span><br><span class="line"></span><br><span class="line">source_image_path = os.path.join(posts_dir, image_link)</span><br><span class="line"></span><br><span class="line">destination_image_path = os.path.join(images_dir, image_name)</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f"检查图片路径: <span class="subst">{source_image_path}</span>"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查图片是否存在</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> os.path.exists(source_image_path):</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f"正在移动图片: <span class="subst">{image_name}</span>"</span>)</span><br><span class="line"></span><br><span class="line">shutil.move(source_image_path, destination_image_path)</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 在.md文件中将空格替换为 %20</span></span><br><span class="line"></span><br><span class="line">new_link = <span class="string">f'![](../images/<span class="subst">{urllib.parse.quote(image_name)}</span>)'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 只替换当前处理的图片链接</span></span><br><span class="line"></span><br><span class="line">new_content = re.sub(<span class="string">r'!\[\['</span> + re.escape(image_link) + <span class="string">r'\|.*?\]\]'</span>, new_link, new_content)</span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f"图片不存在: <span class="subst">{source_image_path}</span>"</span>)</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查文件内容是否实际变化</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> new_content != content:</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f"文件内容已更改，保存修改: <span class="subst">{md_file_path}</span>"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(md_file_path, <span class="string">'w'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line"></span><br><span class="line">f.write(new_content)</span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f"文件内容未变化: <span class="subst">{md_file_path}</span>"</span>)</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置_posts和images文件夹路径</span></span><br><span class="line"></span><br><span class="line">posts_dir = <span class="string">'./myblog/source/_posts'</span> <span class="comment"># 请替换为你实际的路径</span></span><br><span class="line"></span><br><span class="line">images_dir = <span class="string">'./myblog/source/images'</span> <span class="comment"># 请替换为你实际的路径</span></span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">move_images_and_update_links(posts_dir, images_dir)</span><br></pre></td></tr></tbody></table></figure></div>
+<ol>
+<li>在博客仓库里编辑的文章，进行以下设置<img lazyload="" src="/images/loading.svg" data-src="/../images/Pasted%20image%2020250308201636.png"></li>
+</ol>
 ]]></content>
       <categories>
         <category>嘿嘿</category>
