@@ -442,86 +442,40 @@
       </tags>
   </entry>
   <entry>
+    <title></title>
+    <url>/2025/03/23e7a70fea4d.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p><img lazyload="" src="/images/loading.svg" data-src="/./Pasted%20image%2020250308164722.png"></p>
+]]></content>
+      <categories>
+        <category>嘿嘿</category>
+      </categories>
+  </entry>
+  <entry>
     <title>迁移博客加envelope</title>
-    <url>/2025/03/04afeb403c38.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h3 id="在-Mac-安装-git-和-node-js"><a href="#在-Mac-安装-git-和-node-js" class="headerlink" title="在 Mac 安装 git 和 node.js"></a>在 Mac 安装 git 和 node.js</h3><p>使用&nbsp;brew&nbsp;进行安装</p>
-<div class="highlight-container" data-rel="Text"><figure class="iseeu highlight text"><table><tbody><tr><td class="code"><pre><span class="line">brew install git</span><br><span class="line">brew install node</span><br></pre></td></tr></tbody></table></figure></div>
-
-<h3 id="2-安装-hexo"><a href="#2-安装-hexo" class="headerlink" title="2. 安装 hexo"></a>2. 安装 hexo</h3><div class="highlight-container" data-rel="Text"><figure class="iseeu highlight text"><table><tbody><tr><td class="code"><pre><span class="line">npm install hexo g</span><br></pre></td></tr></tbody></table></figure></div>
-
-<p>这条命令不行（用的时候会出现&nbsp;<code>hexo: COMMAND NOT FOUND</code>&nbsp;问题）就执行下面这条：</p>
-<div class="highlight-container" data-rel="Text"><figure class="iseeu highlight text"><table><tbody><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></tbody></table></figure></div>
-
-<h3 id="3-初始化-hexo-目录"><a href="#3-初始化-hexo-目录" class="headerlink" title="3. 初始化 hexo 目录"></a>3. 初始化 hexo 目录</h3><div class="highlight-container" data-rel="Text"><figure class="iseeu highlight text"><table><tbody><tr><td class="code"><pre><span class="line">mkdir blog</span><br><span class="line">cd blog</span><br></pre></td></tr></tbody></table></figure></div>
-
-<h3 id="4-新建-hexo-服务"><a href="#4-新建-hexo-服务" class="headerlink" title="4. 新建 hexo 服务"></a>4. 新建 hexo 服务</h3><div class="highlight-container" data-rel="Text"><figure class="iseeu highlight text"><table><tbody><tr><td class="code"><pre><span class="line">hexo init</span><br><span class="line">hexo s</span><br></pre></td></tr></tbody></table></figure></div>
-
-<p>打开&nbsp;<code>localhost:4000</code>&nbsp;查看是否成功。</p>
-<h3 id="5-生成-SSH-密钥"><a href="#5-生成-SSH-密钥" class="headerlink" title="5. 生成 SSH 密钥"></a>5. 生成 SSH 密钥</h3><p>先查看本地的 SSH Key：</p>
-<div class="highlight-container" data-rel="Text"><figure class="iseeu highlight text"><table><tbody><tr><td class="code"><pre><span class="line">cd ~/.ssh</span><br></pre></td></tr></tbody></table></figure></div>
-
-<p>如果没有，生成一个SSH Key：</p>
-<div class="highlight-container" data-rel="Text"><figure class="iseeu highlight text"><table><tbody><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C "example@example.com"</span><br></pre></td></tr></tbody></table></figure></div>
-
-<p>最后那个是注册邮箱。</p>
-<h3 id="6-关联-GitHub"><a href="#6-关联-GitHub" class="headerlink" title="6. 关联 GitHub"></a>6. 关联 GitHub</h3><p>进入 .ssh 文件夹：</p>
-<div class="highlight-container" data-rel="Text"><figure class="iseeu highlight text"><table><tbody><tr><td class="code"><pre><span class="line">cd ~/.ssh</span><br></pre></td></tr></tbody></table></figure></div>
-
-<p>然后打开里面的&nbsp;<code>id_rsa.pub</code>&nbsp;文件，里面的内容就是 SSH key，复制全部内容。<br>测试一下是否成功：<code>ssh git@github.com</code></p>
-<h2 id="二、配置文件转移"><a href="#二、配置文件转移" class="headerlink" title="二、配置文件转移"></a>二、<a class="link" href="https://zhida.zhihu.com/search?content_id=181284160&amp;content_type=Article&amp;match_order=1&amp;q=%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6&amp;zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3NDE0MzM0NjMsInEiOiLphY3nva7mlofku7YiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoxODEyODQxNjAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.RkSVRshD2qMbDaUBb1IHmlPNeoxKny2EtFKk5nSTzsE&amp;zhida_source=entity">配置文件 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>转移</h2><p>先找到 Windows 下的博客根目录 hexo，复制该目录下的：<code>_config.yml</code>、<code>[scaffolds]、</code>source<code>、</code>themes<code>、</code>public`。 再找到 Mac 下的博客根目录 hexo，把刚才复制的内容，直接覆盖替换相同的文件以及文件夹。</p>
-<h2 id="三、设置个人信息"><a href="#三、设置个人信息" class="headerlink" title="三、设置个人信息"></a>三、设置个人信息</h2><div class="highlight-container" data-rel="Text"><figure class="iseeu highlight text"><table><tbody><tr><td class="code"><pre><span class="line">git config --global user.name "yourname”</span><br><span class="line">git config --global user.email youremail@example.com</span><br></pre></td></tr></tbody></table></figure></div>
-
-<h2 id="四、发布文章"><a href="#四、发布文章" class="headerlink" title="四、发布文章"></a>四、发布文章</h2><p>运行以下命令，查看是否可以成功发布博客：</p>
-<div class="highlight-container" data-rel="Text"><figure class="iseeu highlight text"><table><tbody><tr><td class="code"><pre><span class="line">hexo d -g</span><br></pre></td></tr></tbody></table></figure></div>
-
-<p>发现报错：</p>
-<div class="highlight-container" data-rel="Text"><figure class="iseeu highlight text"><table><tbody><tr><td class="code"><pre><span class="line">ERROR Deployer not found: git</span><br></pre></td></tr></tbody></table></figure></div>
+    <url>/2025/03/3ab441bd3ff9.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line">发现报错：</span><br><span class="line"></span><br><span class="line">```text</span><br><span class="line">ERROR Deployer not found: git</span><br></pre></td></tr></tbody></table></figure></div>
 
 <p>只需要安装：</p>
 <div class="highlight-container" data-rel="Text"><figure class="iseeu highlight text"><table><tbody><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></tbody></table></figure></div>
 
 <p>另外俩报错</p>
 <p> ssh连接方式及Connection closed by 198.xx.xx.xx port 22错误解决<br><a class="link" href="https://blog.csdn.net/m0_60340438/article/details/141273109">https://blog.csdn.net/m0_60340438/article/details/141273109 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>Nunjucks Error: 解决方案<br><a class="link" href="https://blog.csdn.net/weixin_45333934/article/details/108274320">https://blog.csdn.net/weixin_45333934/article/details/108274320 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p>然后，图片，test：<br>![[Pasted image 20250306201923.png|Pasted image 20250306201923.png]]</p>
-]]></content>
-      <categories>
-        <category>嘿嘿</category>
-      </categories>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2025/03/f844f697bc96.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>崩溃了哈哈哈到底怎么整？<br>需求：</p>
+<p>需求：</p>
 <ol>
 <li>图片显示<ul>
 <li>比较简单的解决方案是使用相对路径</li>
+<li>图片必须在source/images下才能显示，否则不管什么相对路径都不管用（是不是主题的问题？烦死啦哈哈）</li>
 </ul>
 </li>
-<li>所以的笔记都在学习仓库里，不可能单独在博客仓库下编辑，所以需要从学习仓库里把笔记和图片都传到博客仓库<ul>
+<li>所有的笔记都在学习仓库里，不可能单独在博客仓库下编辑，所以需要从学习仓库里把笔记和图片都传到博客仓库<ul>
 <li>解决方案：使用obsidian插件envelope，将学习仓库中的笔记上传再pull，然后再执行hexo d -g（后续要考虑自动化）</li>
-<li>问题：该插件所有的文章都被传到同一个文件夹,,,</li>
+<li>问题：该插件所有的文章都被传到同一个文件夹，即不能图片单独传到source/images下，就算pull后手动将图片移到images下，文章的图片路径（学习仓库里的相对路径）没法改成博客仓库的相对路径。。。<ul>
+<li>在博客仓库中当路径为<img lazyload="" src="/images/loading.svg" data-src="/source/images/Pasted%20image%2020250308170137.png">时候是可以显示出来的，即使用绝对路径，好，那么我在学习仓库里也同样的建立source/images，再把图片存在里面，就像这样<img lazyload="" src="/images/loading.svg" data-src="/source/images/Pasted%20image%2020250308170256.png">我心想，这样通过envelope上传后再手动把图片转移到images文件夹下总行了吧？没想到！envelope不仅会将文章和图片传到同一文件夹下，还“贴心地”修改每个图片的路径为相对路径，，，这个方案也失败了。。。</li>
+</ul>
+</li>
 </ul>
 </li>
 </ol>
-<p>test3:<br><img lazyload="" src="/images/loading.svg" data-src="/./Pasted%20image%2020250308154852.png"></p>
-]]></content>
-      <categories>
-        <category>嘿嘿</category>
-      </categories>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2025/03/8f8d6b974868.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>hahahhahahahah<br><img lazyload="" src="/images/loading.svg" data-src="/../../images/Pasted%20image%2020250308160214.png"></p>
-]]></content>
-      <categories>
-        <category>嘿嘿</category>
-      </categories>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2025/03/721546a3fd46.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p><img lazyload="" src="/images/loading.svg" data-src="/../../images/Pasted%20image%2020250308161219.png"></p>
 ]]></content>
       <categories>
         <category>嘿嘿</category>
