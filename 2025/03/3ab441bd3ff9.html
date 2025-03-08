@@ -25,13 +25,12 @@
 <meta property="og:site_name" content="Lena&#39;s Blog">
 <meta property="og:description" content="12345发现报错：&#96;&#96;&#96;textERROR Deployer not found: git  只需要安装： 1npm install hexo-deployer-git --save  另外俩报错  ssh连接方式及Connection closed by 198.xx.xx.xx port 22错误解决https:&#x2F;&#x2F;blog.csdn.net&#x2F;m0_60340438&#x2F;article&#x2F;deta">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/images/Pasted%20image%2020250308170137.png">
-<meta property="og:image" content="http://example.com/images/Pasted%20image%2020250308170256.png">
+<meta property="og:image" content="http://example.com/images/Pasted%20image%2020250306201923.png">
 <meta property="article:published_time" content="2025-03-08T06:56:09.547Z">
-<meta property="article:modified_time" content="2025-03-08T09:11:42.883Z">
+<meta property="article:modified_time" content="2025-03-08T09:15:49.423Z">
 <meta property="article:author" content="Lena">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/Pasted%20image%2020250308170137.png">
+<meta name="twitter:image" content="http://example.com/images/Pasted%20image%2020250306201923.png">
     
     
     <!--- Icon Part-->
@@ -508,8 +507,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-03-08 17:11:42</span>
-            <span class="mobile">2025-03-08 17:11</span>
+            <span class="desktop">2025-03-08 17:15:49</span>
+            <span class="mobile">2025-03-08 17:15</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -531,7 +530,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>418 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>286 字</span>
         </span>
     
     
@@ -568,13 +567,11 @@
 </li>
 <li>所有的笔记都在学习仓库里，不可能单独在博客仓库下编辑，所以需要从学习仓库里把笔记和图片都传到博客仓库<ul>
 <li>解决方案：使用obsidian插件envelope，将学习仓库中的笔记上传再pull，然后再执行hexo d -g（后续要考虑自动化）</li>
-<li>问题：该插件所有的文章都被传到同一个文件夹，即不能图片单独传到source/images下，就算pull后手动将图片移到images下，文章的图片路径（学习仓库里的相对路径）没法改成博客仓库的相对路径。。。<ul>
-<li>在博客仓库中当路径为<img lazyload="" src="/images/loading.svg" data-src="/../images/Pasted%20image%2020250308170137.png">时候是可以显示出来的，即使用绝对路径，好，那么我在学习仓库里也同样的建立source/images，再把图片存在里面，就像这样<img lazyload="" src="/images/loading.svg" data-src="/../images/Pasted%20image%2020250308170256.png">我心想，这样通过envelope上传后再手动把图片转移到images文件夹下总行了吧？没想到！envelope不仅会将文章和图片传到同一文件夹下，还“贴心地”修改每个图片的路径为相对路径，，，这个方案也失败了。。。</li>
-</ul>
-</li>
+<li>问题：该插件所有的文章都被传到同一个文件夹，即不能图片单独传到source/images下，就算pull后手动将图片移到images下，文章的图片路径（学习仓库里的相对路径）没法改成博客仓库的相对路径。。。</li>
 </ul>
 </li>
 </ol>
+<p><img lazyload="" src="/images/loading.svg" data-src="/../images/Pasted%20image%2020250306201923.png"></p>
 
             </div>
 
@@ -587,7 +584,7 @@
         <li><strong>创建于:</strong> 2025-03-08 14:56:09</li>
         
             <li>
-                <strong>更新于:</strong> 2025-03-08 17:11:42
+                <strong>更新于:</strong> 2025-03-08 17:15:49
             </li>
         
         <li>

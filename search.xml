@@ -469,13 +469,11 @@
 </li>
 <li>所有的笔记都在学习仓库里，不可能单独在博客仓库下编辑，所以需要从学习仓库里把笔记和图片都传到博客仓库<ul>
 <li>解决方案：使用obsidian插件envelope，将学习仓库中的笔记上传再pull，然后再执行hexo d -g（后续要考虑自动化）</li>
-<li>问题：该插件所有的文章都被传到同一个文件夹，即不能图片单独传到source/images下，就算pull后手动将图片移到images下，文章的图片路径（学习仓库里的相对路径）没法改成博客仓库的相对路径。。。<ul>
-<li>在博客仓库中当路径为<img lazyload="" src="/images/loading.svg" data-src="/../images/Pasted%20image%2020250308170137.png">时候是可以显示出来的，即使用绝对路径，好，那么我在学习仓库里也同样的建立source/images，再把图片存在里面，就像这样<img lazyload="" src="/images/loading.svg" data-src="/../images/Pasted%20image%2020250308170256.png">我心想，这样通过envelope上传后再手动把图片转移到images文件夹下总行了吧？没想到！envelope不仅会将文章和图片传到同一文件夹下，还“贴心地”修改每个图片的路径为相对路径，，，这个方案也失败了。。。</li>
-</ul>
-</li>
+<li>问题：该插件所有的文章都被传到同一个文件夹，即不能图片单独传到source/images下，就算pull后手动将图片移到images下，文章的图片路径（学习仓库里的相对路径）没法改成博客仓库的相对路径。。。</li>
 </ul>
 </li>
 </ol>
+<p><img lazyload="" src="/images/loading.svg" data-src="/../images/Pasted%20image%2020250306201923.png"></p>
 ]]></content>
       <categories>
         <category>嘿嘿</category>
